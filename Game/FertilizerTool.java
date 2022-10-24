@@ -6,6 +6,14 @@ public class FertilizerTool extends Tool{
     }
 
     @Override
+    public void useTool(Object obj) {
+        if (obj instanceof Fertilizer){
+            Fertilizer temp = (Fertilizer) obj;
+            temp.addFertilizer();
+        }
+    }
+
+    @Override
     public void useTool(Fertilizer fertilizer) {
         fertilizer.addFertilizer();
     }

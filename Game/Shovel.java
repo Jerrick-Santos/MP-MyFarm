@@ -7,6 +7,11 @@ public class Shovel extends Tool{
     }
 
     @Override
+    public void useTool(Object obj) {
+
+    }
+
+    @Override
     public void useTool(Fertilizer fertilizer) {
 
     }

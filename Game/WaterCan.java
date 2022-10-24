@@ -6,6 +6,14 @@ public class WaterCan extends Tool{
     }
 
     @Override
+    public void useTool(Object obj) {
+        if (obj instanceof Water){
+            Water temp = (Water) obj;
+            temp.addWater();
+        }
+    }
+
+    @Override
     public void useTool(Fertilizer fertilizer) {
 
     }
