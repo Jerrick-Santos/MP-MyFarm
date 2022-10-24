@@ -1,4 +1,6 @@
-import Tools.Tool;
+package Game;
+
+import Game.Tool;
 
 import java.util.ArrayList;
 

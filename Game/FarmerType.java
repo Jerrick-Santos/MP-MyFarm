@@ -1,3 +1,5 @@
+package Game;
+
 public class FarmerType {
     private String farmerType;
     private int levelRequirement;
