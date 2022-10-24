@@ -1,3 +1,5 @@
+package Game;
+
 public class GameStats {
     public double balance;
     public double exp;

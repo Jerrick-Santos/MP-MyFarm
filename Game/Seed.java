@@ -1,4 +1,4 @@
-package Seeds;
+package Game;
 
 public class Seed {
     private String name;
@@ -15,7 +15,11 @@ public class Seed {
     public void addDaysPassed(){
         this.daysPassed++;
     }
-    
+
+    public double computeFinalPrice(FarmerType farmerType){
+        double retVal = 0;
+        return retVal;
+    }
 
     public void setWithered(boolean withered) {
         this.withered = withered;

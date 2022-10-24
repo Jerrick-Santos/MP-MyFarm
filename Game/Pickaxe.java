@@ -1,4 +1,4 @@
-package Tools;
+package Game;
 
 public class Pickaxe {
 }

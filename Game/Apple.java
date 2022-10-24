@@ -1,4 +1,4 @@
-package Seeds;
+package Game;
 
 public class Apple {
 }
