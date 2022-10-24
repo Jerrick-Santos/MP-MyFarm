@@ -12,7 +12,12 @@ public class Fertilizer {
     }
 
     public void addFertilizer(){
-        this.timesCropFertilized++;
+        if (this.timesCropFertilized < this.fertilizerMax) {
+            this.timesCropFertilized++;
+        }
+        else {
+            System.out.println("Warning: Can no longer add more water -- Times watered is capped at " + this.fertilizerMax);
+        }
     }
 
     public int getFertilizerMin() {

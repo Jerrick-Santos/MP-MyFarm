@@ -1,8 +1,7 @@
 package Game;
 
-public class Shovel extends Tool{
-
-    public Shovel(String name, int cost, double expGain) {
+public class WaterCan extends Tool{
+    public WaterCan(String name, int cost, double expGain) {
         super(name, cost, expGain);
     }
 
@@ -13,7 +12,7 @@ public class Shovel extends Tool{
 
     @Override
     public void useTool(Water water) {
-
+        water.addWater();
     }
 
     @Override
