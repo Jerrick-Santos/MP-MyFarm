@@ -3,7 +3,7 @@ package Game;
 public class Seed {
     private String name;
     private String cropType;
-    private String harvestDayRequired;
+    private int harvestDayRequired;
     private int daysPassed;
     private Water water;
     private Fertilizer fertilizer;
@@ -12,7 +12,7 @@ public class Seed {
     private double expYield;
     private boolean withered;
 
-    public Seed(String name, String cropType, String harvestDayRequired, int daysPassed, int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
+    public Seed(String name, String cropType, int harvestDayRequired, int daysPassed, int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
                 int seedCost, int baseSellingPrice, double expYield) {
         this.name = name;
         this.cropType = cropType;
