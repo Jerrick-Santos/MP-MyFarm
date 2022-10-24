@@ -47,7 +47,7 @@ public class Seed {
         return cropType;
     }
 
-    public String getHarvestDayRequired() {
+    public int getHarvestDayRequired() {
         return harvestDayRequired;
     }
 
