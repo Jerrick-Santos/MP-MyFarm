@@ -23,10 +23,6 @@ public abstract class Tool {
         return expGain;
     }
 
-    public abstract void useTool(Fertilizer fertilizer);
-    public abstract void useTool(Water water);
-    public abstract void useTool(Tile tile);
-
-    public abstract void useTool(Object obj);
+    public abstract boolean useTool(Object obj);
 
 }

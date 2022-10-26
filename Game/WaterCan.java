@@ -6,25 +6,18 @@ public class WaterCan extends Tool{
     }
 
     @Override
-    public void useTool(Object obj) {
+    public boolean useTool(Object obj) {
+        boolean retVal;
         if (obj instanceof Water){
             Water temp = (Water) obj;
             temp.addWater();
+            retVal = true;
         }
+        else {
+            retVal = false;
+        }
+
+        return retVal;
     }
 
-    @Override
-    public void useTool(Fertilizer fertilizer) {
-
-    }
-
-    @Override
-    public void useTool(Water water) {
-        water.addWater();
-    }
-
-    @Override
-    public void useTool(Tile tile) {
-
-    }
 }

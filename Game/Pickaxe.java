@@ -6,34 +6,25 @@ public class Pickaxe extends Tool{
     }
 
     @Override
-    public void useTool(Object obj) {
+    public boolean useTool(Object obj) {
+        boolean retVal;
         if (obj instanceof Tile) {
             Tile tile = (Tile) obj;
             if (tile.isRock()) {
                 tile.setRock(false);
+                retVal = true;
             }
             else {
-                System.out.println("Warning: Cannot use Pickaxe - rock is not available");
+                retVal = false;
+                System.out.println("Warning: Cannot use Pickaxe - rock is not present");
             }
         }
-    }
-
-    @Override
-    public void useTool(Fertilizer fertilizer) {
-    }
-
-    @Override
-    public void useTool(Water water) {
-
-    }
-
-    @Override
-    public void useTool(Tile tile) {
-        if (tile.isRock()) {
-            tile.setRock(false);
-        }
         else {
-            System.out.println("Warning: Cannot use Pickaxe - rock is not available");
+            retVal = false;
         }
+
+        return retVal;
     }
+
+
 }

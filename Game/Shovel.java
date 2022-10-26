@@ -7,22 +7,24 @@ public class Shovel extends Tool{
     }
 
     @Override
-    public void useTool(Object obj) {
+    public boolean useTool(Object obj) {
+        boolean retVal = false;
+        if (obj instanceof Tile) {
+            Tile tile = (Tile) obj;
+            if (tile.isRock() || !tile.isPlowed()) {
+                retVal = true;
+            } else if (tile.isOccupied() && tile.getPlantedSeed() != null) {
+                retVal = true;
+                tile.removePlantedSeed();
+                tile.setPlowed(false);
+                System.out.println("GameChange: Plant has been removed");
+            }
+        }
+        else {
+            retVal = false;
+        }
 
+        return retVal;
     }
 
-    @Override
-    public void useTool(Fertilizer fertilizer) {
-
-    }
-
-    @Override
-    public void useTool(Water water) {
-
-    }
-
-    @Override
-    public void useTool(Tile tile) {
-
-    }
 }

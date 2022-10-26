@@ -41,8 +41,22 @@ public class Tile {
         this.plowed = plowed;
     }
 
-    public void setPlantedSeed(String name, String cropType, int harvestDayRequired, int daysPassed, int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
+    public void removePlantedSeed(){
+        if (this.plantedSeed != null){
+            this.plantedSeed = null;
+        }
+    }
+
+    public void setPlantedSeed(String name, String cropType, int harvestDayRequired, int daysPassed,
+                               int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
                                int seedCost, int baseSellingPrice, double expYield) {
-        this.plantedSeed = new Seed(name, cropType, harvestDayRequired, daysPassed, waterMin, waterMax, fertilizerMin, fertilizerMax, seedCost, baseSellingPrice, expYield);
+
+        if (!this.rock && !this.occupied && this.plowed && this.plantedSeed == null){
+            this.plantedSeed = new Seed(name, cropType, harvestDayRequired, daysPassed,
+                    waterMin, waterMax, fertilizerMin, fertilizerMax,
+                    seedCost, baseSellingPrice, expYield);
+            this.occupied = true;
+        }
+
     }
 }
