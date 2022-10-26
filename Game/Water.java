@@ -28,6 +28,11 @@ public class Water {
     }
 
     public void addWater(){
-        this.timesCropWatered++;
+        if (this.timesCropWatered < this.waterMax) {
+            this.timesCropWatered++;
+        }
+        else {
+            System.out.println("Warning: Can no longer add more water -- Times watered is capped at " + this.waterMax);
+        }
     }
 }

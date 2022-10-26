@@ -1,4 +1,28 @@
 package Game;
 
-public class Tool {
+public abstract class Tool {
+    private String name;
+    private int cost;
+    private double expGain;
+
+    public Tool(String name, int cost, double expGain) {
+        this.name = name;
+        this.cost = cost;
+        this.expGain = expGain;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public double getExpGain() {
+        return expGain;
+    }
+
+    public abstract boolean useTool(Object obj);
+
 }

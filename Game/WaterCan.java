@@ -1,16 +1,16 @@
 package Game;
 
-public class FertilizerTool extends Tool{
-    public FertilizerTool(String name, int cost, double expGain) {
+public class WaterCan extends Tool{
+    public WaterCan(String name, int cost, double expGain) {
         super(name, cost, expGain);
     }
 
     @Override
     public boolean useTool(Object obj) {
         boolean retVal;
-        if (obj instanceof Fertilizer){
-            Fertilizer temp = (Fertilizer) obj;
-            temp.addFertilizer();
+        if (obj instanceof Water){
+            Water temp = (Water) obj;
+            temp.addWater();
             retVal = true;
         }
         else {
