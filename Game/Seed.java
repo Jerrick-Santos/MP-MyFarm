@@ -35,6 +35,32 @@ public class Seed {
         return retVal;
     }
 
+    public void checkWithered(){
+        if (!this.withered){
+            if (this.daysPassed == this.harvestDayRequired){
+                if (this.water.getWaterMin() <= this.water.getTimesCropWatered()
+                        && this.fertilizer.getFertilizerMin() <= this.fertilizer.getTimesCropFertilized()){
+                    System.out.println("Note: You can now HARVEST your plant!");
+                }
+                else {
+                    System.out.println("This is the last day you can add fertilizer and water to your plant to HARVEST");
+                    System.out.println("Required number of Water: " + (this.water.getWaterMin() - this.water.getTimesCropWatered()));
+                    System.out.println("Required number of Fertilizer: " + (this.fertilizer.getFertilizerMin() - this.fertilizer.getTimesCropFertilized()));
+                }
+            }
+            else if (this.daysPassed > this.harvestDayRequired){
+                if (this.water.getWaterMin() <= this.water.getTimesCropWatered()
+                        && this.fertilizer.getFertilizerMin() <= this.fertilizer.getTimesCropFertilized()){
+                    System.out.println("Note: You can now HARVEST your plant!");
+                }
+                else {
+                    this.withered = true;
+                    System.out.println("Warning: Your Plant has been withered. Use shovel tool to remove");
+                }
+            }
+        }
+    }
+
     public void setWithered(boolean withered) {
         this.withered = withered;
     }
