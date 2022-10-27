@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Player {
     private String name;
     private int level;
+    private int passedDays;
     private FarmerType farmerType;
     private GameStats gameStats;
     private Tile land;
