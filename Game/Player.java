@@ -38,7 +38,10 @@ public class Player {
     }
 
     public void nextDay(){
-
+        if (this.land.getPlantedSeed() != null && this.land.isPlowed()){
+            this.land.getPlantedSeed().addDaysPassed();
+            //this.land.getPlantedSeed().checkWithered();
+        }
     }
 
     public void equipTool(int toolIndex){
@@ -76,7 +79,7 @@ public class Player {
             this.land.setPlowed(false);
         }
         else {
-            System.out.println("WARNING!! Plant is withered! Use the shovel!");
+            System.out.println("Warning: Plant is withered! Use the shovel!");
         }
     }
 
