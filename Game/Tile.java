@@ -49,12 +49,12 @@ public class Tile {
 
     public void setPlantedSeed(String name, String cropType, int harvestDayRequired, int daysPassed,
                                int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
-                               int seedCost, int baseSellingPrice, double expYield) {
+                               int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield) {
 
         if (!this.rock && !this.occupied && this.plowed && this.plantedSeed == null){
             this.plantedSeed = new Seed(name, cropType, harvestDayRequired, daysPassed,
                     waterMin, waterMax, fertilizerMin, fertilizerMax,
-                    seedCost, baseSellingPrice, expYield);
+                    seedCost, productsProducedMin, productsProducedMax, baseSellingPrice, expYield);
             this.occupied = true;
         }
 
