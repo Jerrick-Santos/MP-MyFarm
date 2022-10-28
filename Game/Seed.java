@@ -24,7 +24,7 @@ public class Seed {
         this.fertilizer = new Fertilizer(fertilizerMin, fertilizerMax);
         this.seedCost = seedCost;
         this.productsProducedMin = productsProducedMin;
-        this.productsProducedMax = productsProducedMax
+        this.productsProducedMax = productsProducedMax;
         this.baseSellingPrice = baseSellingPrice;
         this.expYield = expYield;
         this.withered = false;
@@ -37,7 +37,7 @@ public class Seed {
 
     public double computeFinalPrice(FarmerType farmerType){
         double retVal = 0;
-        double randomVal = (int)Math.floor(Math.random()*(this.productsProducedMax-this.productsProducedMin+1)+this.productsProducedMin)
+        double randomVal = (int)Math.floor(Math.random()*(this.productsProducedMax-this.productsProducedMin+1)+this.productsProducedMin);
         double harvestTotal = 0;
         double waterBonus = 0;
         double fertilizerBonus = 0;
