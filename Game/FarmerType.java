@@ -1,7 +1,7 @@
 package Game;
 
 public class FarmerType {
-    private String farmerType;
+    private String farmerTypeName;
     private int levelRequirement;
     private int bonusEarns;
     private int costReduction;
@@ -10,7 +10,7 @@ public class FarmerType {
     private double fee;
 
     public FarmerType() {
-        this.farmerType = "Farmer";
+        this.farmerTypeName = "Farmer";
         this.levelRequirement = 0;
         this.bonusEarns = 0;
         this.costReduction = 0;
@@ -19,12 +19,12 @@ public class FarmerType {
         this.fee = 0;
     }
 
-    public String getFarmerType() {
-        return farmerType;
+    public String getFarmerTypeName() {
+        return farmerTypeName;
     }
 
-    public void setFarmerType(String farmerType) {
-        this.farmerType = farmerType;
+    public void setFarmerTypeName(String farmerType) {
+        this.farmerTypeName = farmerType;
     }
 
     public int getLevelRequirement() {
