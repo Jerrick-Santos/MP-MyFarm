@@ -38,7 +38,10 @@ public class Player {
     }
 
     public void nextDay(){
-
+        if (this.land.getPlantedSeed() != null && this.land.isPlowed()){
+            this.land.getPlantedSeed().addDaysPassed();
+            //this.land.getPlantedSeed().checkWithered();
+        }
     }
 
     public void equipTool(int toolIndex){
@@ -50,4 +53,20 @@ public class Player {
             System.out.println("Warning: Invalid Tool Selection");
         }
     }
+
+    public void plant(int select){
+        if (this.land.isPlowed() && !this.land.isOccupied()
+        && this.land.getPlantedSeed() == null){
+            if (select == 1){
+                this.land.setPlantedSeed("Turnip", "Crop", 2, 0,
+                        1,2,0,1,5,6,5);
+                this.gameStats.deductWallet(5 - farmerType.getCostReduction());
+            }
+        }
+        else {
+            System.out.println("Warning: cannot be planted! selected tile is occupied");
+        }
+    }
+
+
 }
