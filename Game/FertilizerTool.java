@@ -8,10 +8,17 @@ public class FertilizerTool extends Tool{
     @Override
     public boolean useTool(Object obj) {
         boolean retVal;
-        if (obj instanceof Fertilizer){
-            Fertilizer temp = (Fertilizer) obj;
-            temp.addFertilizer();
-            retVal = true;
+        if (obj instanceof Tile){
+            Tile temp = (Tile) obj;
+
+            if (temp.getPlantedSeed() != null && temp.isPlowed()){
+                temp.getPlantedSeed().getFertilizer().addFertilizer();
+                retVal = true;
+            }
+            else {
+                retVal = false;
+            }
+
         }
         else {
             retVal = false;

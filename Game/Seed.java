@@ -14,7 +14,7 @@ public class Seed {
     private double expYield;
     private boolean withered;
 
-    public Seed(String name, String cropType, int harvestDayRequired, int daysPassed, int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
+    public Seed(String name, String cropType, int harvestDayRequired, int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
                 int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield) {
         this.name = name;
         this.cropType = cropType;

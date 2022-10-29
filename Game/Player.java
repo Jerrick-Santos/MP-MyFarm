@@ -40,12 +40,11 @@ public class Player {
     public void nextDay(){
         if (this.land.getPlantedSeed() != null && this.land.isPlowed()){
             this.land.getPlantedSeed().addDaysPassed();
-            //this.land.getPlantedSeed().checkWithered();
+            this.land.getPlantedSeed().checkWithered();
         }
     }
 
     public void equipTool(int toolIndex){
-
         if (toolIndex >= 0 && toolIndex < 5){
             this.selectedTool = toolIndex;
         }
@@ -57,10 +56,32 @@ public class Player {
     public void plant(int select){
         if (this.land.isPlowed() && !this.land.isOccupied()
         && this.land.getPlantedSeed() == null){
-            if (select == 1){
-                this.land.setPlantedSeed("Turnip", "Crop", 2, 0,
-                        1,2,0,1,5,6,5);
+            if (select == 1 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
+                this.land.setPlantedSeed("Turnip", "Root Crop", 2,
+                        1,2,
+                        0,1,
+                        5,
+                        1,2,
+                        6,5);
                 this.gameStats.deductWallet(5 - farmerType.getCostReduction());
+            }
+            else if (select == 2 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+                this.land.setPlantedSeed("Carrot", "Root Crop", 3,
+                        1,2,
+                        0,1,
+                        10,
+                        1,2,
+                        9,7.5);
+                this.gameStats.deductWallet(10 - farmerType.getCostReduction());
+            }
+            else if (select == 3 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+                this.land.setPlantedSeed("Potato", "Root Crop", 5,
+                        3,4,
+                        1,2,
+                        20,
+                        1,10,
+                        3,12.5);
+                this.gameStats.deductWallet(10 - farmerType.getCostReduction());
             }
         }
         else {
@@ -83,6 +104,45 @@ public class Player {
         }
     }
 
+    public void useTool(){
+        if (this.selectedTool != -1){
+            if (this.selectedTool == 0){ //WaterCan
+                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                    this.gameStats.gainExp(0.5);
+                }
+            }
+            else if (this.selectedTool == 1 && this.gameStats.getBalance() >= 10){ //fertilizer
+                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                    this.gameStats.gainExp(4);
+                    this.gameStats.deductWallet(10);
+                }
+            }
+            else if (this.selectedTool == 2){ //Plow
+                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                    this.gameStats.gainExp(0.5);
+                }
+            }
+            else if (this.selectedTool == 3 && this.gameStats.getBalance() >= 50){ //Pickaxe
+                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                    this.gameStats.gainExp(15);
+                    this.gameStats.deductWallet(50);
+                }
+            }
+            else if (this.selectedTool == 4 && this.gameStats.getBalance() >= 7){ //Shovel
+                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                    this.gameStats.gainExp(2);
+                    this.gameStats.deductWallet(7);
+                }
+            }
+            else {
+                System.out.println("Cannot use tool: Conditions are not met");
+            }
+        }
+        else {
+            System.out.println("Warning: Tool not Equipped.");
+        }
+    }
+
     public boolean updateLevel() {
         boolean retVal = false;
         if (gameStats.getExp() >= 100 && gameStats.getExp() < 200 && this.level < 1){
@@ -100,12 +160,44 @@ public class Player {
         } else if (gameStats.getExp() >= 500 && gameStats.getExp() < 600 && this.level < 5){
             this.level++;
             retVal = true;
+        } else if (gameStats.getExp() >= 600 && gameStats.getExp() < 700 && this.level < 6){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 700 && gameStats.getExp() < 800 && this.level < 7){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 800 && gameStats.getExp() < 900 && this.level < 8){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 900 && gameStats.getExp() < 1000 && this.level < 9){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 1000 && gameStats.getExp() < 1100 && this.level < 10){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 1100 && gameStats.getExp() < 1200 && this.level < 11){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 1200 && gameStats.getExp() < 1300 && this.level < 12){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 1300 && gameStats.getExp() < 1400 && this.level < 13){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 1400 && gameStats.getExp() < 1500 && this.level < 14){
+            this.level++;
+            retVal = true;
+        } else if (gameStats.getExp() >= 1500 && this.level < 15){
+            this.level++;
+            retVal = true;
         }
+
+
         return retVal;
     }
 
     public void updateFarmerType(int choice) {
-        if (this.level >= 5 && this.level < 10) {
+        if (this.level >= 5 && this.level < 10 && !this.farmerType.getFarmerTypeName().equals("Registered Farmer")) {
             if (choice == 1) {
                 this.farmerType.setFarmerTypeName("Registered Farmer");
                 this.farmerType.setBonusEarns(1);
@@ -113,7 +205,7 @@ public class Player {
                 this.farmerType.setFee(200);
                 this.gameStats.deductWallet(this.farmerType.getFee());
             }
-        } else if (this.level >= 10 && this.level < 15) {
+        } else if (this.level >= 10 && this.level < 15 && !this.farmerType.getFarmerTypeName().equals("Distinguished Farmer")) {
             if (choice == 1) {
                 this.farmerType.setFarmerTypeName("Distinguished Farmer");
                 this.farmerType.setBonusEarns(2);
@@ -122,6 +214,14 @@ public class Player {
                 this.farmerType.setFee(300);
                 this.gameStats.deductWallet(this.farmerType.getFee());
             }
+        } else if (this.level >= 15 && !this.farmerType.getFarmerTypeName().equals("Legendary Farmer")){
+            this.farmerType.setFarmerTypeName("Legendary Farmer");
+            this.farmerType.setBonusEarns(4);
+            this.farmerType.setCostReduction(3);
+            this.farmerType.setWaterIncrease(2);
+            this.farmerType.setFertilizerIncrease(1);
+            this.farmerType.setFee(400);
+            this.gameStats.deductWallet(this.farmerType.getFee());
         }
     }
 
