@@ -32,7 +32,7 @@ public class Fertilizer {
         return timesCropFertilized;
     }
 
-    public void setFertilizerMax(int fertilizerMax) {
-        this.fertilizerMax = fertilizerMax;
+    public void addFertilizerMax(int amt) {
+        this.fertilizerMax += amt;
     }
 }

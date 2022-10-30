@@ -23,8 +23,8 @@ public class Water {
         return timesCropWatered;
     }
 
-    public void setWaterMax(int waterMax) {
-        this.waterMax = waterMax;
+    public void addWaterMax(int amt) {
+        this.waterMax += amt;
     }
 
     public void addWater(){

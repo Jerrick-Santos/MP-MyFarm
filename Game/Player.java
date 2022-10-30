@@ -211,6 +211,11 @@ public class Player {
                 this.farmerType.setBonusEarns(2);
                 this.farmerType.setCostReduction(2);
                 this.farmerType.setWaterIncrease(1);
+
+                if (this.land.getPlantedSeed() != null && !this.land.getPlantedSeed().isWithered()){
+                    this.land.getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                }
+
                 this.farmerType.setFee(300);
                 this.gameStats.deductWallet(this.farmerType.getFee());
             }
@@ -220,6 +225,12 @@ public class Player {
             this.farmerType.setCostReduction(3);
             this.farmerType.setWaterIncrease(2);
             this.farmerType.setFertilizerIncrease(1);
+
+            if (this.land.getPlantedSeed() != null && !this.land.getPlantedSeed().isWithered()){
+                this.land.getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                this.land.getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerType.getFertilizerIncrease());
+            }
+
             this.farmerType.setFee(400);
             this.gameStats.deductWallet(this.farmerType.getFee());
         }
