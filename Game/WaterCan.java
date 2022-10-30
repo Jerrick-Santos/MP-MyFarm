@@ -8,10 +8,17 @@ public class WaterCan extends Tool{
     @Override
     public boolean useTool(Object obj) {
         boolean retVal;
-        if (obj instanceof Water){
-            Water temp = (Water) obj;
-            temp.addWater();
-            retVal = true;
+        if (obj instanceof Tile){
+            Tile temp = (Tile) obj;
+
+            if (temp.getPlantedSeed() != null && temp.isPlowed()){
+                temp.getPlantedSeed().getWater().addWater();
+                retVal = true;
+            }
+            else {
+                retVal = false;
+            }
+
         }
         else {
             retVal = false;

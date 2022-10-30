@@ -23,8 +23,8 @@ public class Water {
         return timesCropWatered;
     }
 
-    public void setWaterMax(int waterMax) {
-        this.waterMax = waterMax;
+    public void addWaterMax(int amt) {
+        this.waterMax += amt;
     }
 
     public void addWater(){
@@ -32,7 +32,7 @@ public class Water {
             this.timesCropWatered++;
         }
         else {
-            System.out.println("Warning: Can no longer add more water -- Times watered is capped at " + this.waterMax);
+            System.out.println("Warning: Can no longer add more water -- Times crop watered is capped at " + this.waterMax);
         }
     }
 }
