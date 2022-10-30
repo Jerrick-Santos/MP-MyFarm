@@ -16,7 +16,7 @@ public class Fertilizer {
             this.timesCropFertilized++;
         }
         else {
-            System.out.println("Warning: Can no longer add more water -- Times watered is capped at " + this.fertilizerMax);
+            System.out.println("Warning: Can no longer add more fertilizer -- Times crop fertilized is capped at " + this.fertilizerMax);
         }
     }
 

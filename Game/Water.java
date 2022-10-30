@@ -32,7 +32,7 @@ public class Water {
             this.timesCropWatered++;
         }
         else {
-            System.out.println("Warning: Can no longer add more water -- Times watered is capped at " + this.waterMax);
+            System.out.println("Warning: Can no longer add more water -- Times crop watered is capped at " + this.waterMax);
         }
     }
 }

@@ -32,7 +32,6 @@ public class Seed {
 
     public void addDaysPassed(){
         this.daysPassed++;
-        checkWithered();
     }
 
     public double computeFinalPrice(FarmerType farmerType){

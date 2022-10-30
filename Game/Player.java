@@ -42,6 +42,7 @@ public class Player {
             this.land.getPlantedSeed().addDaysPassed();
             this.land.getPlantedSeed().checkWithered();
         }
+        this.passedDays++;
     }
 
     public void equipTool(int toolIndex){
@@ -83,6 +84,9 @@ public class Player {
                         3,12.5);
                 this.gameStats.deductWallet(10 - farmerType.getCostReduction());
             }
+            else{
+                System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
+            }
         }
         else {
             System.out.println("Warning: cannot be planted! selected tile is occupied");
@@ -92,7 +96,8 @@ public class Player {
 
 
     public void harvestPlant() {
-        if (!this.land.getPlantedSeed().isWithered()){
+        if (this.land.getPlantedSeed() != null && this.land.isPlowed()
+            && !this.land.getPlantedSeed().isWithered()){
             this.gameStats.addWallet(this.land.getPlantedSeed().computeFinalPrice(this.farmerType));
             this.gameStats.gainExp(this.land.getPlantedSeed().getExpYield());
             this.land.removePlantedSeed();
@@ -104,7 +109,7 @@ public class Player {
         }
     }
 
-    public void useTool(){
+    public void useEquippedTool(){
         if (this.selectedTool != -1){
             if (this.selectedTool == 0){ //WaterCan
                 if (this.toolSetList.get(selectedTool).useTool(this.land)){
@@ -220,19 +225,22 @@ public class Player {
                 this.gameStats.deductWallet(this.farmerType.getFee());
             }
         } else if (this.level >= 15 && !this.farmerType.getFarmerTypeName().equals("Legendary Farmer")){
-            this.farmerType.setFarmerTypeName("Legendary Farmer");
-            this.farmerType.setBonusEarns(4);
-            this.farmerType.setCostReduction(3);
-            this.farmerType.setWaterIncrease(2);
-            this.farmerType.setFertilizerIncrease(1);
+            if (choice == 1){
+                this.farmerType.setFarmerTypeName("Legendary Farmer");
+                this.farmerType.setBonusEarns(4);
+                this.farmerType.setCostReduction(3);
+                this.farmerType.setWaterIncrease(2);
+                this.farmerType.setFertilizerIncrease(1);
 
-            if (this.land.getPlantedSeed() != null && !this.land.getPlantedSeed().isWithered()){
-                this.land.getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
-                this.land.getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerType.getFertilizerIncrease());
+                if (this.land.getPlantedSeed() != null && !this.land.getPlantedSeed().isWithered()){
+                    this.land.getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                    this.land.getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerType.getFertilizerIncrease());
+                }
+
+                this.farmerType.setFee(400);
+                this.gameStats.deductWallet(this.farmerType.getFee());
             }
 
-            this.farmerType.setFee(400);
-            this.gameStats.deductWallet(this.farmerType.getFee());
         }
     }
 
