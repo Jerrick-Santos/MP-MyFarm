@@ -36,7 +36,7 @@ public class Seed {
 
     public double computeFinalPrice(FarmerType farmerType){
         double retVal = 0;
-        double randomVal = (int)Math.floor(Math.random()*(this.productsProducedMax-this.productsProducedMin+1)+this.productsProducedMin);
+        int randomVal = (int)Math.floor(Math.random()*(this.productsProducedMax-this.productsProducedMin+1)+this.productsProducedMin);
         double harvestTotal = 0;
         double waterBonus = 0;
         double fertilizerBonus = 0;
@@ -44,6 +44,7 @@ public class Seed {
         waterBonus = harvestTotal * 0.2 * (this.water.getTimesCropWatered()-1);
         fertilizerBonus = harvestTotal * 0.5 * this.fertilizer.getTimesCropFertilized();
         retVal = harvestTotal + waterBonus + fertilizerBonus;
+        System.out.println(this.name + "has produced " + randomVal + " product(s).");
         return retVal;
     }
 
