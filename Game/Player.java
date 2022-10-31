@@ -43,6 +43,7 @@ public class Player {
             this.land.getPlantedSeed().checkWithered();
         }
         this.passedDays++;
+        System.out.println("Passed Days: " + this.passedDays);
     }
 
     public void equipTool(int toolIndex){
@@ -57,7 +58,7 @@ public class Player {
     public void plant(int select){
         if (this.land.isPlowed() && !this.land.isOccupied()
         && this.land.getPlantedSeed() == null){
-            if (select == 1 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
+            if (select == 0 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Turnip", "Root Crop", 2,
                         1,2,
                         0,1,
@@ -66,7 +67,7 @@ public class Player {
                         6,5);
                 this.gameStats.deductWallet(5 - farmerType.getCostReduction());
             }
-            else if (select == 2 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+            else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Carrot", "Root Crop", 3,
                         1,2,
                         0,1,
@@ -75,7 +76,7 @@ public class Player {
                         9,7.5);
                 this.gameStats.deductWallet(10 - farmerType.getCostReduction());
             }
-            else if (select == 3 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+            else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Potato", "Root Crop", 5,
                         3,4,
                         1,2,
@@ -198,6 +199,10 @@ public class Player {
         }
 
 
+        if (retVal){
+            System.out.println("Game: Level Up to " + this.level);
+        }
+
         return retVal;
     }
 
@@ -244,11 +249,33 @@ public class Player {
         }
     }
 
+    //GETTERS
+
     public FarmerType getFarmerType() {
         return farmerType;
     }
 
     public GameStats getGameStats() {
         return gameStats;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getPassedDays() {
+        return passedDays;
+    }
+
+    public Tile getLand() {
+        return land;
+    }
+
+    public int getSelectedTool() {
+        return selectedTool;
     }
 }
