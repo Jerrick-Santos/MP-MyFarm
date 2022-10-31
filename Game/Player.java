@@ -83,14 +83,14 @@ public class Player {
                         20,
                         1,10,
                         3,12.5);
-                this.gameStats.deductWallet(10 - farmerType.getCostReduction());
+                this.gameStats.deductWallet(20 - farmerType.getCostReduction());
             }
             else{
                 System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }
         }
         else {
-            System.out.println("Warning: cannot be planted! selected tile is occupied");
+            System.out.println("Warning: cannot be planted!");
         }
     }
 
@@ -98,15 +98,20 @@ public class Player {
 
     public void harvestPlant() {
         if (this.land.getPlantedSeed() != null && this.land.isPlowed()
-            && !this.land.getPlantedSeed().isWithered()){
+            && !this.land.getPlantedSeed().isWithered()
+            && this.land.getPlantedSeed().getHarvestDayRequired() == this.land.getPlantedSeed().getDaysPassed()){
+            System.out.println(this.land.getPlantedSeed().getName() + " has been harvested.");
             this.gameStats.addWallet(this.land.getPlantedSeed().computeFinalPrice(this.farmerType));
             this.gameStats.gainExp(this.land.getPlantedSeed().getExpYield());
             this.land.removePlantedSeed();
             this.land.setOccupied(false);
             this.land.setPlowed(false);
         }
-        else {
+        else if (this.land.getPlantedSeed().isWithered()){
             System.out.println("Warning: Plant is withered! Use the shovel!");
+        }
+        else {
+            System.out.println("Warning: Harvest Day Required not met.");
         }
     }
 

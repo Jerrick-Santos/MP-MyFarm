@@ -11,10 +11,11 @@ public class Driver {
         Tool Shovel = new Shovel("Shovel", 7, 2);
 
         String name;
+        System.out.print("Enter Your Name: ");
         Scanner scanner = new Scanner(System.in);
         name = scanner.nextLine();
 
-        Player player = new Player(name, PlowTool, WaterCan, FertilizerTool, Pickaxe, Shovel);
+        Player player = new Player(name, WaterCan, FertilizerTool, PlowTool, Pickaxe, Shovel);
 
 
         while (!player.endGame()){
@@ -42,6 +43,8 @@ public class Driver {
     }
 
     public static void displayMainActions(){
+        System.out.println("\n");
+        System.out.println("==========================");
         System.out.println("Game Actions");
         System.out.println("[0] Equip a Tool");
         System.out.println("[1] Use Equipped Tool");
@@ -50,10 +53,11 @@ public class Driver {
         System.out.println("[4] Harvest Plant");
         System.out.println("[5] Check Player Status");
 
-        System.out.print("Enter an Action:");
+        System.out.print("Enter an Action: ");
     }
 
     public static void displayPlayerStatus(Player p){
+        System.out.println();
         System.out.println("====================================================");
         System.out.println("Player Name: " + p.getName());
         System.out.println("Level: " + p.getLevel());
@@ -108,10 +112,13 @@ public class Driver {
             System.out.println("Planted Seed: None");
         }
 
-
+        System.out.println("====================================================");
+        System.out.println();
     }
 
     public static void displayToolOptions(){
+        System.out.println();
+        System.out.println("==========================");
         System.out.println("Tool Options: ");
         System.out.println("[0] Water Can");
         System.out.println("[1] Fertilizer Tool");
@@ -122,6 +129,8 @@ public class Driver {
     }
 
     public static void displayPlantSeedOptions(){
+        System.out.println();
+        System.out.println("==========================");
         System.out.println("Note: When you decied to plant a seed. You will be " +
                 "automatically buy a seed as well (deducting from your OBJCs Wallet");
         System.out.println("Seed Options: ");
