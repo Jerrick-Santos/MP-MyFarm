@@ -1,9 +1,44 @@
 package Game;
 
+import java.util.Scanner;
+
 public class Driver {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Hello!");
+        Tool PlowTool = new PlowTool("PlowTool", 0, 0.5);
+        Tool WaterCan = new WaterCan("WaterCan", 0, 0.5);
+        Tool FertilizerTool = new FertilizerTool("FertilizerTool", 10, 4);
+        Tool Pickaxe = new Pickaxe("Pickaxe", 50, 15);
+        Tool Shovel = new Shovel("Shovel", 7, 2);
+
+        String name;
+        Scanner scanner = new Scanner(System.in);
+        name = scanner.nextLine();
+
+        Player player = new Player(name, PlowTool, WaterCan, FertilizerTool, Pickaxe, Shovel);
+
+
+        while (!player.endGame()){
+            int selectMain, selectTool, selectPlant;
+
+            displayMainActions();
+            selectMain = scanner.nextInt();
+            switch (selectMain) {
+                case 0 -> {
+                    displayToolOptions();
+                    selectTool = scanner.nextInt();
+                    player.equipTool(selectTool);
+                }
+                case 1 -> player.useEquippedTool();
+                case 2 -> player.nextDay();
+                case 3 -> {
+                    displayPlantSeedOptions();
+                    selectPlant = scanner.nextInt();
+                    player.plant(selectPlant);
+                }
+                case 4 -> player.harvestPlant();
+                case 5 -> displayPlayerStatus(player);
+            }
+        }
     }
 
     public static void displayMainActions(){
