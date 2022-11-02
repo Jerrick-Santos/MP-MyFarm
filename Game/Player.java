@@ -57,7 +57,7 @@ public class Player {
 
     public void plant(int select){
         if (this.land.isPlowed() && !this.land.isOccupied()
-        && this.land.getPlantedSeed() == null){
+        && this.land.getPlantedSeed() == null && !this.land.isRock()){
             if (select == 0 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Turnip", "Root Crop", 2,
                         1,2,
@@ -92,7 +92,7 @@ public class Player {
                 System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }
         }
-        else if (this.land.isPlowed() && !this.land.isOccupied()
+        else if (this.land.isPlowed() && this.land.isOccupied()
                 && this.land.getPlantedSeed() != null){
             System.out.println("Warning: cannot be planted! - Tile still has a plant");
         }

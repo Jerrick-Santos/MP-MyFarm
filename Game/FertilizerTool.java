@@ -11,7 +11,7 @@ public class FertilizerTool extends Tool{
         if (obj instanceof Tile){
             Tile temp = (Tile) obj;
 
-            if (temp.getPlantedSeed() != null && temp.isPlowed()){
+            if (temp.getPlantedSeed() != null && temp.isPlowed() && !temp.getPlantedSeed().isWithered()){
                 temp.getPlantedSeed().getFertilizer().addFertilizer();
                 retVal = true;
             }
