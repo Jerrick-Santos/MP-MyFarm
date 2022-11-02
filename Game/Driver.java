@@ -101,10 +101,14 @@ public class Driver {
                     p.getLand().getPlantedSeed().isWithered());
             System.out.println("Crop Maturity (in days): " +
                     p.getLand().getPlantedSeed().getDaysPassed());
-            System.out.println("Days Left Until Harvest Day: " +
-                    (p.getLand().getPlantedSeed().getHarvestDayRequired() - p.getLand().getPlantedSeed().getDaysPassed()));
+            System.out.println("Harvest Day: " +
+                    (p.getLand().getPlantedSeed().getHarvestDayRequired()));
+            System.out.println("Minimum Water Requirement: " +
+                    p.getLand().getPlantedSeed().getWater().getWaterMin());
             System.out.println("Times Crop Watered: " +
                     p.getLand().getPlantedSeed().getWater().getTimesCropWatered());
+            System.out.println("Minimum Fertilizer Requirement: " +
+                    p.getLand().getPlantedSeed().getFertilizer().getFertilizerMin());
             System.out.println("Times Crop Fertilized: " +
                     p.getLand().getPlantedSeed().getFertilizer().getTimesCropFertilized());
         }

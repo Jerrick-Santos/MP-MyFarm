@@ -65,6 +65,7 @@ public class Player {
                         5,
                         1,2,
                         6,5);
+                System.out.println("Note: Turnip planted!");
                 this.gameStats.deductWallet(5 - farmerType.getCostReduction());
             }
             else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
@@ -74,6 +75,7 @@ public class Player {
                         10,
                         1,2,
                         9,7.5);
+                System.out.println("Note: Carrot planted!");
                 this.gameStats.deductWallet(10 - farmerType.getCostReduction());
             }
             else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
@@ -83,14 +85,19 @@ public class Player {
                         20,
                         1,10,
                         3,12.5);
+                System.out.println("Note: Potato planted!");
                 this.gameStats.deductWallet(20 - farmerType.getCostReduction());
             }
             else{
                 System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }
         }
+        else if (this.land.isPlowed() && !this.land.isOccupied()
+                && this.land.getPlantedSeed() != null){
+            System.out.println("Warning: cannot be planted! - Tile still has a plant");
+        }
         else {
-            System.out.println("Warning: cannot be planted!");
+            System.out.println("Warning: cannot be planted! - Tile is not plowed");
         }
     }
 
