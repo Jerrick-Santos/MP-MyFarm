@@ -17,6 +17,7 @@ public class FertilizerTool extends Tool{
             }
             else {
                 retVal = false;
+                System.out.println("Warning: Plant not found. Please plant a seed first.");
             }
 
         }

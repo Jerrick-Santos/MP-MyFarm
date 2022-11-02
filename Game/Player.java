@@ -107,11 +107,17 @@ public class Player {
             this.land.setOccupied(false);
             this.land.setPlowed(false);
         }
-        else if (this.land.getPlantedSeed().isWithered()){
+        else if (this.land.getPlantedSeed() != null && this.land.isPlowed()
+            && this.land.getPlantedSeed().isWithered()){
             System.out.println("Warning: Plant is withered! Use the shovel!");
         }
-        else {
+        else if (this.land.getPlantedSeed() != null && this.land.isPlowed()
+                && !this.land.getPlantedSeed().isWithered()
+                && this.land.getPlantedSeed().getHarvestDayRequired() != this.land.getPlantedSeed().getDaysPassed()){
             System.out.println("Warning: Harvest Day Required not met.");
+        }
+        else {
+            System.out.println("Warning: Plant does not exist. Please plant a seed");
         }
     }
 

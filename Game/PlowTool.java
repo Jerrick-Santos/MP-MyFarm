@@ -12,6 +12,7 @@ public class PlowTool extends Tool{
             if (!tile.isPlowed()) {
                 tile.setPlowed(true);
                 retVal = true;
+                System.out.println("Note: Tile has been plowed");
             }
             else {
                 retVal = false;
