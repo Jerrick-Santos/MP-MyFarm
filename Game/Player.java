@@ -1,4 +1,9 @@
 package Game;
+/**
+ * This is the Player class which handles all the game mechanics. It is also responsible for instantiating
+ * the required classes to rune the game (e.g., Tile). The player class holds the necessary attributes to perform
+ * game mechanics such as to plant, harvest, equip a tool, use a tool and proceed to next day.
+ */
 
 import Game.Tool;
 
@@ -15,6 +20,15 @@ public class Player {
     private ArrayList<Tool> toolSetList;
     private int selectedTool;
 
+    /**
+     * This constructor creates the game itself. Creates the required classes needed for the game to run.
+     * @param name - the name of the player
+     * @param tool1 - Water can
+     * @param tool2 - Fertilizer
+     * @param tool3 - Plow Tool
+     * @param tool4 - Pickaxe
+     * @param tool5 - Shovel
+     */
     public Player(String name, Tool tool1, Tool tool2, Tool tool3, Tool tool4, Tool tool5) {
         this.name = name;
         this.level = 0;
@@ -22,10 +36,14 @@ public class Player {
         this.farmerType = new FarmerType();
         this.gameStats = new GameStats();
         this.land = new Tile();
-        this.toolSetList = new ArrayList<>(Arrays.asList(tool1, tool2, tool3, tool4, tool5));
+        this.toolSetList = new ArrayList<>(Arrays.asList(tool1, tool2, tool3, tool4, tool5)); //takes input from pre-constructed tool variables in main
         this.selectedTool = -1;
     }
 
+    /**
+     * checks if certain requirements has been met to end the game. I.e., checking the balance and withered seed(s)
+     * @return true if game has ended, otherwise return false
+     */
     public boolean endGame(){ //currently only works on a single tile
         boolean retVal = false;
 
@@ -37,14 +55,24 @@ public class Player {
         return retVal;
     }
 
+    /**
+     * Proceeds to the next day when method is called
+     * Adds a passed day in the plane (seed) if it exists, if not it will not do anything
+     * Nevertheless, it will always increment the passedDays attribute within player
+     */
     public void nextDay(){
         if (this.land.getPlantedSeed() != null && this.land.isPlowed()){
             this.land.getPlantedSeed().addDaysPassed();
             this.land.getPlantedSeed().checkWithered();
         }
         this.passedDays++;
+        System.out.println("Passed Days: " + this.passedDays);
     }
 
+    /**
+     * Equips a tool from the toolSetList ArrayList
+     * @param toolIndex - User input given their tool of choice
+     */
     public void equipTool(int toolIndex){
         if (toolIndex >= 0 && toolIndex < 5){
             this.selectedTool = toolIndex;
@@ -54,61 +82,96 @@ public class Player {
         }
     }
 
+    /**
+     * Plants the seed to the tile given their selection. Each plant type is represented by a number(int).
+     * A plant can only be planted with the correct usage of select, there is no presence of rock, the tile is
+     * plowed, not occupied, there is no presence of planted plant (seed), and finally not occupied.
+     * When these conditions are met then, the OBJCs wallet will be deducted automatically to the appropriate amount.
+     * @param select - User input given their seed of choice
+     */
     public void plant(int select){
         if (this.land.isPlowed() && !this.land.isOccupied()
-        && this.land.getPlantedSeed() == null){
-            if (select == 1 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
+        && this.land.getPlantedSeed() == null && !this.land.isRock()){
+            if (select == 0 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Turnip", "Root Crop", 2,
                         1,2,
                         0,1,
                         5,
                         1,2,
                         6,5);
+                System.out.println("Note: Turnip planted!");
                 this.gameStats.deductWallet(5 - farmerType.getCostReduction());
             }
-            else if (select == 2 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+            else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Carrot", "Root Crop", 3,
                         1,2,
                         0,1,
                         10,
                         1,2,
                         9,7.5);
+                System.out.println("Note: Carrot planted!");
                 this.gameStats.deductWallet(10 - farmerType.getCostReduction());
             }
-            else if (select == 3 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+            else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
                 this.land.setPlantedSeed("Potato", "Root Crop", 5,
                         3,4,
                         1,2,
                         20,
                         1,10,
                         3,12.5);
-                this.gameStats.deductWallet(10 - farmerType.getCostReduction());
+                System.out.println("Note: Potato planted!");
+                this.gameStats.deductWallet(20 - farmerType.getCostReduction());
             }
             else{
                 System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }
         }
+        else if (this.land.isPlowed() && this.land.isOccupied()
+                && this.land.getPlantedSeed() != null){
+            System.out.println("Warning: cannot be planted! - Tile still has a plant");
+        }
         else {
-            System.out.println("Warning: cannot be planted! selected tile is occupied");
+            System.out.println("Warning: cannot be planted! - Tile is not plowed");
         }
     }
 
 
-
+    /**
+     * Harvests a plant.
+     * When this method is called, it checks if there is a seed planted, the tile is plowed and not withered.
+     * It also checks if the planted seed has reached its harvest day.
+     * If these conditions are met, the tile is reverted to its original state and appropriate calculations
+     * of the computed price will be added to the OBJCs wallet.
+     */
     public void harvestPlant() {
         if (this.land.getPlantedSeed() != null && this.land.isPlowed()
-            && !this.land.getPlantedSeed().isWithered()){
+            && !this.land.getPlantedSeed().isWithered()
+            && this.land.getPlantedSeed().getHarvestDayRequired() == this.land.getPlantedSeed().getDaysPassed()){
+            System.out.println(this.land.getPlantedSeed().getName() + " has been harvested.");
             this.gameStats.addWallet(this.land.getPlantedSeed().computeFinalPrice(this.farmerType));
             this.gameStats.gainExp(this.land.getPlantedSeed().getExpYield());
             this.land.removePlantedSeed();
             this.land.setOccupied(false);
             this.land.setPlowed(false);
         }
-        else {
+        else if (this.land.getPlantedSeed() != null && this.land.isPlowed()
+            && this.land.getPlantedSeed().isWithered()){
             System.out.println("Warning: Plant is withered! Use the shovel!");
+        }
+        else if (this.land.getPlantedSeed() != null && this.land.isPlowed()
+                && !this.land.getPlantedSeed().isWithered()
+                && this.land.getPlantedSeed().getHarvestDayRequired() != this.land.getPlantedSeed().getDaysPassed()){
+            System.out.println("Warning: Harvest Day Required not met.");
+        }
+        else {
+            System.out.println("Warning: Plant does not exist. Please plant a seed");
         }
     }
 
+    /**
+     * Uses the selected tool by using the selectedTool attribute.
+     * EXP will be added when the tool can be successfully used.
+     */
     public void useEquippedTool(){
         if (this.selectedTool != -1){
             if (this.selectedTool == 0){ //WaterCan
@@ -148,6 +211,10 @@ public class Player {
         }
     }
 
+    /**
+     * Checks the requirements (EXP) if the player can level up. Increments the level by 1 when conditions are met.
+     * @return true if the level has been updated
+     */
     public boolean updateLevel() {
         boolean retVal = false;
         if (gameStats.getExp() >= 100 && gameStats.getExp() < 200 && this.level < 1){
@@ -198,9 +265,17 @@ public class Player {
         }
 
 
+        if (retVal){
+            System.out.println("Game: Level Up to " + this.level);
+        }
+
         return retVal;
     }
 
+    /**
+     * Upgrades the farmer type parameters (bonuses and seed cost reduction)
+     * @param choice - 1 (yes) or 0 (no) to decide if user wished to upgrade the farmerType
+     */
     public void updateFarmerType(int choice) {
         if (this.level >= 5 && this.level < 10 && !this.farmerType.getFarmerTypeName().equals("Registered Farmer")) {
             if (choice == 1) {
@@ -244,11 +319,33 @@ public class Player {
         }
     }
 
+    //GETTERS
+
     public FarmerType getFarmerType() {
         return farmerType;
     }
 
     public GameStats getGameStats() {
         return gameStats;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getPassedDays() {
+        return passedDays;
+    }
+
+    public Tile getLand() {
+        return land;
+    }
+
+    public int getSelectedTool() {
+        return selectedTool;
     }
 }
