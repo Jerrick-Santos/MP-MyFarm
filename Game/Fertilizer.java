@@ -16,9 +16,9 @@ public class Fertilizer {
      * @param fertilizerMin - minimum fertilizer requirement
      * @param fertilizerMax - maximum fertilizer requirement
      */
-    public Fertilizer(int fertilizerMin, int fertilizerMax) {
+    public Fertilizer(int fertilizerMin, int fertilizerMax, FarmerType farmerType) {
         this.fertilizerMin = fertilizerMin;
-        this.fertilizerMax = fertilizerMax;
+        this.fertilizerMax = fertilizerMax + farmerType.getFertilizerIncrease();
         this.timesCropFertilized = 0;
     }
 

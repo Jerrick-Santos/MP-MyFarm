@@ -37,13 +37,13 @@ public class Seed {
      * @param expYield - EXP yield when seed is harvested
      */
     public Seed(String name, String cropType, int harvestDayRequired, int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
-                int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield) {
+                int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield, FarmerType farmerType) {
         this.name = name;
         this.cropType = cropType;
         this.harvestDayRequired = harvestDayRequired;
         this.daysPassed = 0;
-        this.water = new Water(waterMin, waterMax); //Water object is created
-        this.fertilizer = new Fertilizer(fertilizerMin, fertilizerMax); //Fertilizer object is created
+        this.water = new Water(waterMin, waterMax, farmerType); //Water object is created
+        this.fertilizer = new Fertilizer(fertilizerMin, fertilizerMax, farmerType); //Fertilizer object is created
         this.seedCost = seedCost;
         this.productsProducedMin = productsProducedMin;
         this.productsProducedMax = productsProducedMax;
