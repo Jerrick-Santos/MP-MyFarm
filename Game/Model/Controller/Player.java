@@ -1,11 +1,11 @@
-package Game;
+package Game.Model.Controller;
 /**
  * This is the Player class which handles all the game mechanics. It is also responsible for instantiating
  * the required classes to rune the game (e.g., Tile). The player class holds the necessary attributes to perform
  * game mechanics such as to plant, harvest, equip a tool, use a tool and proceed to next day.
  */
 
-import Game.Tool;
+import Game.Model.Tools.Tool;
 
 import java.util.ArrayList;
 import java.util.Arrays;

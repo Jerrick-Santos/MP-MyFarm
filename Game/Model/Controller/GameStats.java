@@ -1,4 +1,4 @@
-package Game;
+package Game.Model.Controller;
 
 /**
  * The GameStats class contains the variables responsible for holding the wallet balance and

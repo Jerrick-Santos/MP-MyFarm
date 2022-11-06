@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Seeds;
+
+import Game.Model.Controller.FarmerType;
 
 /**
  * The Fertilizer Class contains the information needed for fertilizing a

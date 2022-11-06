@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Controller;
+
+import Game.Model.Seeds.Seed;
 
 public class Tile {
     private boolean rock;

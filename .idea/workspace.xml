@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MP-MyFarm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Fertilizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Fertilizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Seed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Water.java" afterDir="false" />
+    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Carrot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Carrot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/FarmerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/FarmerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Fertilizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Fertilizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/FertilizerTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Mango.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Mango.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Pickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/PlowTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Potato.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Potato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Rose.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Shovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Sunflower.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Tool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Tulips.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Turnip.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/WaterCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +59,7 @@
       <module name="MP-MyFarm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Game.*" />
+          <option name="PATTERN" value="Game.Model.Controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -54,11 +67,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Driver" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,6 +77,14 @@
       <option name="presentableId" value="Default" />
       <updated>1667564566404</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
+      <created>1667629401784</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667629401784</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +97,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
   </component>
 </project>

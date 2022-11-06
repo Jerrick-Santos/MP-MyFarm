@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Tools;
+
+import Game.Model.Controller.Tile;
 
 /**
  * This class turns an unplowed tile to a plowed tile.

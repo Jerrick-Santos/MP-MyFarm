@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Seeds;
+
+import Game.Model.Controller.FarmerType;
 
 /**
  * The Seed class contains the necessary information/data for a seed object. It can also compute the value

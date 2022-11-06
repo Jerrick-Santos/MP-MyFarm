@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Seeds;
+
+import Game.Model.Controller.FarmerType;
 
 /**
  * The Water Class contains the information needed for watering a particular crop,

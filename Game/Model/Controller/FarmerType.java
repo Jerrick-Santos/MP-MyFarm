@@ -1,4 +1,4 @@
-package Game;
+package Game.Model.Controller;
 
 /**
  * The FarmerType class contains the necessary information for the player's current
