@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Seeds;
+
+import Game.Model.Controller.FarmerType;
 
 /**
  * The Water Class contains the information needed for watering a particular crop,
@@ -16,9 +18,9 @@ public class Water {
      * @param waterMin - minimum water requirement
      * @param waterMax - maximum water requirement
      */
-    public Water(int waterMin, int waterMax) {
+    public Water(int waterMin, int waterMax, FarmerType farmerType) {
         this.waterMin = waterMin;
-        this.waterMax = waterMax;
+        this.waterMax = waterMax + farmerType.getWaterIncrease();
         this.timesCropWatered = 0;
     }
 

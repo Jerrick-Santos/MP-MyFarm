@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e377e8d5-65d8-4f0d-a54b-9489821164f7" name="Changes" comment="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java">
-      <change afterPath="$PROJECT_DIR$/MP-MyFarm.iml" afterDir="false" />
+    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Carrot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Carrot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/FarmerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/FarmerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Fertilizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Fertilizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/FertilizerTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Mango.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Mango.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Pickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/PlowTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Potato.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Potato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Rose.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Shovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Sunflower.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Tool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Tulips.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Turnip.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/WaterCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,17 +32,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="FullFeatures" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2GZ9gq6GfaXToAAe8qat38N7wqq" />
+  <component name="ProjectId" id="2H5ARcj1ISGTjuB7nXHil5OyXEv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,21 +46,20 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Driver" type="Application" factoryName="Application">
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game.Driver" />
       <module name="MP-MyFarm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Game.*" />
+          <option name="PATTERN" value="Game.Model.Controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -55,75 +71,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e377e8d5-65d8-4f0d-a54b-9489821164f7" name="Changes" comment="" />
-      <created>1666585352718</created>
+      <changelist id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="" />
+      <created>1667564566404</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666585352718</updated>
-      <workItem from="1666585354419" duration="36778000" />
-      <workItem from="1667566338232" duration="2014000" />
+      <updated>1667564566404</updated>
     </task>
-    <task id="LOCAL-00001" summary="Change data type from 'String' to 'int' -- attribute : harvestDayRequired">
-      <created>1666589734207</created>
+    <task id="LOCAL-00001" summary="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
+      <created>1667629401784</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1666589734207</updated>
+      <updated>1667629401784</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added in Tile.java -- added constructor, setters, and getters.">
-      <created>1666590067511</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1666590067511</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added 'extends' throughout all seeds -- Apple, Carrot, Mango, Potato, Rose, Sunflower, Turnip, Turnips.">
-      <created>1666599611331</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1666599611331</updated>
-    </task>
-    <task id="LOCAL-00004" summary="For Seed.java,&#10;*Added attributes to Seed.java -- int productsProducedMin, int productsProducedMax.&#10;*Updated constructor of Seed.java -- added new attributes: productsProducedMin, productsProducedMax.&#10;*Added computation for computeFinalPrice()&#10;&#10;For Tile.java&#10;*Updated parameters for setPlantedSeed()">
-      <created>1666934455857</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1666934455857</updated>
-    </task>
-    <task id="LOCAL-00005" summary="*Added semicolon for lines 27 and 40.">
-      <created>1666935110141</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1666935110141</updated>
-    </task>
-    <task id="LOCAL-00006" summary="For Player.java,&#10;- Added logic to harvestPlant()&#10;- Added logic to updateLevel()&#10;- Added logic to updateFarmerType()&#10;- Added getters -- getFarmerType(), getGameStats()&#10;&#10;For FarmerType.java,&#10;- Changed attribute name farmerType to farmerTypeName">
-      <created>1666937869609</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1666937869609</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added main logic to Driver.java">
-      <created>1667232937644</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1667232937644</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java">
-      <created>1667487852105</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1667487852105</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -137,19 +99,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change data type from 'String' to 'int' -- attribute : harvestDayRequired" />
-    <MESSAGE value="Added in Tile.java -- added constructor, setters, and getters." />
-    <MESSAGE value="Added 'extends' throughout all seeds -- Apple, Carrot, Mango, Potato, Rose, Sunflower, Turnip, Turnips." />
-    <MESSAGE value="For Seed.java,&#10;*Added attributes to Seed.java -- int productsProducedMin, int productsProducedMax.&#10;*Updated constructor of Seed.java -- added new attributes: productsProducedMin, productsProducedMax.&#10;*Added computation for computeFinalPrice()&#10;&#10;For Tile.java&#10;*Updated parameters for setPlantedSeed()" />
-    <MESSAGE value="*Added semicolon for lines 27 and 40." />
-    <MESSAGE value="For Player.java,&#10;- Added logic to harvestPlant()&#10;- Added logic to updateLevel()&#10;- Added logic to updateFarmerType()&#10;- Added getters -- getFarmerType(), getGameStats()&#10;&#10;For FarmerType.java,&#10;- Changed attribute name farmerType to farmerTypeName" />
-    <MESSAGE value="Added main logic to Driver.java" />
-    <MESSAGE value="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Game.*</FILTER>
-    </SUITE>
+    <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
   </component>
 </project>

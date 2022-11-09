@@ -1,4 +1,7 @@
-package Game;
+package Game.Model.Tools;
+
+import Game.Model.Controller.Tile;
+
 /**
  * This class removes a seed (withered or not)
  */

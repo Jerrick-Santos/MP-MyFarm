@@ -1,4 +1,7 @@
-package Game;
+package Game.Model.Tools;
+
+import Game.Model.Controller.Tile;
+
 /**
  * This class adds fertilizer to the seed
  */

@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Seeds;
+
+import Game.Model.Controller.FarmerType;
 
 /**
  * The Fertilizer Class contains the information needed for fertilizing a
@@ -16,9 +18,9 @@ public class Fertilizer {
      * @param fertilizerMin - minimum fertilizer requirement
      * @param fertilizerMax - maximum fertilizer requirement
      */
-    public Fertilizer(int fertilizerMin, int fertilizerMax) {
+    public Fertilizer(int fertilizerMin, int fertilizerMax, FarmerType farmerType) {
         this.fertilizerMin = fertilizerMin;
-        this.fertilizerMax = fertilizerMax;
+        this.fertilizerMax = fertilizerMax + farmerType.getFertilizerIncrease();
         this.timesCropFertilized = 0;
     }
 

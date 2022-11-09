@@ -1,4 +1,4 @@
-package Game;
+package Game.Model.Seeds;
 
 /**
  * Inherits the Seed class

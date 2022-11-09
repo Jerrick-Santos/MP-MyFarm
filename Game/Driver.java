@@ -1,5 +1,8 @@
 package Game;
 
+import Game.Model.Controller.Player;
+import Game.Model.Tools.*;
+
 import java.util.Scanner;
 
 public class Driver {

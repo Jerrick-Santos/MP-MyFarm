@@ -1,11 +1,11 @@
-package Game;
+package Game.Model.Controller;
 /**
  * This is the Player class which handles all the game mechanics. It is also responsible for instantiating
  * the required classes to rune the game (e.g., Tile). The player class holds the necessary attributes to perform
  * game mechanics such as to plant, harvest, equip a tool, use a tool and proceed to next day.
  */
 
-import Game.Tool;
+import Game.Model.Tools.Tool;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ public class Player {
     private int passedDays;
     private FarmerType farmerType;
     private GameStats gameStats;
-    private Tile land;
+    private Tile[][] land;
     private ArrayList<Tool> toolSetList;
     private int selectedTool;
 
@@ -35,7 +35,7 @@ public class Player {
         this.passedDays = 0;
         this.farmerType = new FarmerType();
         this.gameStats = new GameStats();
-        this.land = new Tile();
+        this.land = new Tile[10][5];
         this.toolSetList = new ArrayList<>(Arrays.asList(tool1, tool2, tool3, tool4, tool5)); //takes input from pre-constructed tool variables in main
         this.selectedTool = -1;
     }
@@ -46,9 +46,17 @@ public class Player {
      */
     public boolean endGame(){ //currently only works on a single tile
         boolean retVal = false;
+        int tilesWithWitheredSeed = 0;
 
-        if (this.gameStats.getBalance() < 5 && this.land.getPlantedSeed() != null &&
-        this.land.getPlantedSeed().isWithered()){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (this.land[i][j].getPlantedSeed() != null && this.land[i][j].getPlantedSeed().isWithered()){
+                    tilesWithWitheredSeed++;
+                }
+            }
+        }
+
+        if ((tilesWithWitheredSeed == 50 && this.gameStats.getBalance() < 3) || tilesWithWitheredSeed == 50){
             retVal = true;
         }
 
@@ -61,9 +69,14 @@ public class Player {
      * Nevertheless, it will always increment the passedDays attribute within player
      */
     public void nextDay(){
-        if (this.land.getPlantedSeed() != null && this.land.isPlowed()){
-            this.land.getPlantedSeed().addDaysPassed();
-            this.land.getPlantedSeed().checkWithered();
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (this.land[i][j].getPlantedSeed() != null && this.land[i][j].isPlowed()){
+                    this.land[i][j].getPlantedSeed().addDaysPassed();
+                    this.land[i][j].getPlantedSeed().checkWithered();
+                }
+            }
         }
         this.passedDays++;
         System.out.println("Passed Days: " + this.passedDays);
@@ -89,50 +102,57 @@ public class Player {
      * When these conditions are met then, the OBJCs wallet will be deducted automatically to the appropriate amount.
      * @param select - User input given their seed of choice
      */
-    public void plant(int select){
-        if (this.land.isPlowed() && !this.land.isOccupied()
-        && this.land.getPlantedSeed() == null && !this.land.isRock()){
+    public boolean plant(int select, int row, int col){
+        boolean retVal = false;
+        if (this.land[row][col].isPlowed() && !this.land[row][col].isOccupied()
+        && this.land[row][col].getPlantedSeed() == null && !this.land[row][col].isRock())
+        {
             if (select == 0 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
-                this.land.setPlantedSeed("Turnip", "Root Crop", 2,
+                this.land[row][col].setPlantedSeed("Turnip", "Root Crop", 2,
                         1,2,
                         0,1,
                         5,
                         1,2,
-                        6,5);
+                        6,5, this.farmerType);
                 System.out.println("Note: Turnip planted!");
                 this.gameStats.deductWallet(5 - farmerType.getCostReduction());
+                retVal = true;
             }
             else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
-                this.land.setPlantedSeed("Carrot", "Root Crop", 3,
+                this.land[row][col].setPlantedSeed("Carrot", "Root Crop", 3,
                         1,2,
                         0,1,
                         10,
                         1,2,
-                        9,7.5);
+                        9,7.5, this.farmerType);
                 System.out.println("Note: Carrot planted!");
                 this.gameStats.deductWallet(10 - farmerType.getCostReduction());
+                retVal = true;
             }
             else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
-                this.land.setPlantedSeed("Potato", "Root Crop", 5,
+                this.land[row][col].setPlantedSeed("Potato", "Root Crop", 5,
                         3,4,
                         1,2,
                         20,
                         1,10,
-                        3,12.5);
+                        3,12.5, this.farmerType);
                 System.out.println("Note: Potato planted!");
                 this.gameStats.deductWallet(20 - farmerType.getCostReduction());
+                retVal = true;
             }
             else{
                 System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }
         }
-        else if (this.land.isPlowed() && this.land.isOccupied()
-                && this.land.getPlantedSeed() != null){
+        else if (this.land[row][col].isPlowed() && this.land[row][col].isOccupied()
+                && this.land[row][col].getPlantedSeed() != null){
             System.out.println("Warning: cannot be planted! - Tile still has a plant");
         }
         else {
             System.out.println("Warning: cannot be planted! - Tile is not plowed");
         }
+
+        return retVal;
     }
 
 
@@ -143,63 +163,72 @@ public class Player {
      * If these conditions are met, the tile is reverted to its original state and appropriate calculations
      * of the computed price will be added to the OBJCs wallet.
      */
-    public void harvestPlant() {
-        if (this.land.getPlantedSeed() != null && this.land.isPlowed()
-            && !this.land.getPlantedSeed().isWithered()
-            && this.land.getPlantedSeed().getHarvestDayRequired() == this.land.getPlantedSeed().getDaysPassed()){
-            System.out.println(this.land.getPlantedSeed().getName() + " has been harvested.");
-            this.gameStats.addWallet(this.land.getPlantedSeed().computeFinalPrice(this.farmerType));
-            this.gameStats.gainExp(this.land.getPlantedSeed().getExpYield());
-            this.land.removePlantedSeed();
-            this.land.setOccupied(false);
-            this.land.setPlowed(false);
+    public boolean harvestPlant(int row, int col) {
+        boolean retVal = false;
+        if (this.land[row][col].getPlantedSeed() != null && this.land[row][col].isPlowed()
+            && !this.land[row][col].getPlantedSeed().isWithered()
+            && this.land[row][col].getPlantedSeed().getHarvestDayRequired() == this.land[row][col].getPlantedSeed().getDaysPassed()){
+            System.out.println(this.land[row][col].getPlantedSeed().getName() + " has been harvested.");
+            this.gameStats.addWallet(this.land[row][col].getPlantedSeed().computeFinalPrice(this.farmerType));
+            this.gameStats.gainExp(this.land[row][col].getPlantedSeed().getExpYield());
+            this.land[row][col].removePlantedSeed();
+            this.land[row][col].setOccupied(false);
+            this.land[row][col].setPlowed(false);
+            retVal = true;
         }
-        else if (this.land.getPlantedSeed() != null && this.land.isPlowed()
-            && this.land.getPlantedSeed().isWithered()){
+        else if (this.land[row][col].getPlantedSeed() != null && this.land[row][col].isPlowed()
+            && this.land[row][col].getPlantedSeed().isWithered()){
             System.out.println("Warning: Plant is withered! Use the shovel!");
         }
-        else if (this.land.getPlantedSeed() != null && this.land.isPlowed()
-                && !this.land.getPlantedSeed().isWithered()
-                && this.land.getPlantedSeed().getHarvestDayRequired() != this.land.getPlantedSeed().getDaysPassed()){
+        else if (this.land[row][col].getPlantedSeed() != null && this.land[row][col].isPlowed()
+                && !this.land[row][col].getPlantedSeed().isWithered()
+                && this.land[row][col].getPlantedSeed().getHarvestDayRequired() != this.land[row][col].getPlantedSeed().getDaysPassed()){
             System.out.println("Warning: Harvest Day Required not met.");
         }
         else {
             System.out.println("Warning: Plant does not exist. Please plant a seed");
         }
+        return retVal;
     }
 
     /**
      * Uses the selected tool by using the selectedTool attribute.
      * EXP will be added when the tool can be successfully used.
      */
-    public void useEquippedTool(){
+    public boolean useEquippedTool(int row, int col){
+        boolean retVal = false;
         if (this.selectedTool != -1){
             if (this.selectedTool == 0){ //WaterCan
-                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                if (this.toolSetList.get(selectedTool).useTool(this.land[row][col])){
                     this.gameStats.gainExp(0.5);
+                    retVal = true;
                 }
             }
             else if (this.selectedTool == 1 && this.gameStats.getBalance() >= 10){ //fertilizer
-                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                if (this.toolSetList.get(selectedTool).useTool(this.land[row][col])){
                     this.gameStats.gainExp(4);
                     this.gameStats.deductWallet(10);
+                    retVal = true;
                 }
             }
             else if (this.selectedTool == 2){ //Plow
-                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                if (this.toolSetList.get(selectedTool).useTool(this.land[row][col])){
                     this.gameStats.gainExp(0.5);
+                    retVal = true;
                 }
             }
             else if (this.selectedTool == 3 && this.gameStats.getBalance() >= 50){ //Pickaxe
-                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                if (this.toolSetList.get(selectedTool).useTool(this.land[row][col])){
                     this.gameStats.gainExp(15);
                     this.gameStats.deductWallet(50);
+                    retVal = true;
                 }
             }
             else if (this.selectedTool == 4 && this.gameStats.getBalance() >= 7){ //Shovel
-                if (this.toolSetList.get(selectedTool).useTool(this.land)){
+                if (this.toolSetList.get(selectedTool).useTool(this.land[row][col])){
                     this.gameStats.gainExp(2);
                     this.gameStats.deductWallet(7);
+                    retVal = true;
                 }
             }
             else {
@@ -209,6 +238,8 @@ public class Player {
         else {
             System.out.println("Warning: Tool not Equipped.");
         }
+
+        return retVal;
     }
 
     /**
@@ -292,8 +323,12 @@ public class Player {
                 this.farmerType.setCostReduction(2);
                 this.farmerType.setWaterIncrease(1);
 
-                if (this.land.getPlantedSeed() != null && !this.land.getPlantedSeed().isWithered()){
-                    this.land.getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                for (int i = 0; i < 10; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
+                            this.land[i][j].getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                        }
+                    }
                 }
 
                 this.farmerType.setFee(300);
@@ -307,10 +342,15 @@ public class Player {
                 this.farmerType.setWaterIncrease(2);
                 this.farmerType.setFertilizerIncrease(1);
 
-                if (this.land.getPlantedSeed() != null && !this.land.getPlantedSeed().isWithered()){
-                    this.land.getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
-                    this.land.getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerType.getFertilizerIncrease());
+                for (int i = 0; i < 10; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
+                            this.land[i][j].getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                            this.land[i][j].getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerType.getFertilizerIncrease());
+                        }
+                    }
                 }
+
 
                 this.farmerType.setFee(400);
                 this.gameStats.deductWallet(this.farmerType.getFee());
@@ -341,8 +381,8 @@ public class Player {
         return passedDays;
     }
 
-    public Tile getLand() {
-        return land;
+    public Tile getLand(int row, int col) {
+        return land[row][col];
     }
 
     public int getSelectedTool() {

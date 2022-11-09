@@ -1,4 +1,6 @@
-package Game;
+package Game.Model.Controller;
+
+import Game.Model.Seeds.Seed;
 
 public class Tile {
     private boolean rock;
@@ -49,14 +51,14 @@ public class Tile {
 
     public void setPlantedSeed(String name, String cropType, int harvestDayRequired,
                                int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
-                               int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield) {
+                               int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield, FarmerType farmerType) {
 
         if (!this.rock && !this.occupied && this.plowed && this.plantedSeed == null){
             this.plantedSeed = new Seed(name, cropType, harvestDayRequired,
                     waterMin, waterMax,
                     fertilizerMin, fertilizerMax,
                     seedCost, productsProducedMin,
-                    productsProducedMax, baseSellingPrice, expYield);
+                    productsProducedMax, baseSellingPrice, expYield, farmerType);
             this.occupied = true;
         }
 

@@ -1,4 +1,4 @@
-package Game;
+package Game.Model.Tools;
 
 /**
  * This is the Tool class which is an abstract class. The purpose of this class is only to provide a template
