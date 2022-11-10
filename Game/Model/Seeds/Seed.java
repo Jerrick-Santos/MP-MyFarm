@@ -77,6 +77,11 @@ public class Seed {
         waterBonus = harvestTotal * 0.2 * (this.water.getTimesCropWatered()-1);
         fertilizerBonus = harvestTotal * 0.5 * this.fertilizer.getTimesCropFertilized();
         retVal = harvestTotal + waterBonus + fertilizerBonus;
+
+        if (this.cropType.equals("Flower")) {
+            retVal *= 1.1;
+        }
+
         System.out.println(this.name + "has produced " + randomVal + " product(s).");
         return retVal;
     }
