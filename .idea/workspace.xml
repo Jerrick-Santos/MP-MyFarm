@@ -1,36 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Added other plant types and implemented features for flower harvest and Fruit Tree planting">
+    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Fixed code in Driver and edited updateFarmerType and also added a checkFarmerType Eligibility method in Player">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Apple.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Carrot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/FarmerType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Fertilizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/FertilizerTool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/GameStats.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Mango.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Pickaxe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/PlowTool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Potato.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Rose.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Seed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Shovel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Sunflower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Tile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Tool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Tulips.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Turnip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Water.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/WaterCan.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668045929949</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed code in Driver and edited updateFarmerType and also added a checkFarmerType Eligibility method in Player">
+      <created>1668065957874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668065957874</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
     <MESSAGE value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
+    <MESSAGE value="Fixed code in Driver and edited updateFarmerType and also added a checkFarmerType Eligibility method in Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed code in Driver and edited updateFarmerType and also added a checkFarmerType Eligibility method in Player" />
   </component>
 </project>

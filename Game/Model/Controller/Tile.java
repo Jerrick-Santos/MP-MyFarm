@@ -1,6 +1,6 @@
 package Game.Model.Controller;
 
-import Game.Model.Seeds.Seed;
+import Game.Model.Seeds.*;
 
 public class Tile {
     private boolean rock;
@@ -49,16 +49,63 @@ public class Tile {
         }
     }
 
-    public void setPlantedSeed(String name, String cropType, int harvestDayRequired,
+    public void setPlantedSeed(int select, String name, String cropType, int harvestDayRequired,
                                int waterMin, int waterMax, int fertilizerMin, int fertilizerMax,
                                int seedCost, int productsProducedMin, int productsProducedMax, int baseSellingPrice, double expYield, FarmerType farmerType) {
 
         if (!this.rock && !this.occupied && this.plowed && this.plantedSeed == null){
-            this.plantedSeed = new Seed(name, cropType, harvestDayRequired,
-                    waterMin, waterMax,
-                    fertilizerMin, fertilizerMax,
-                    seedCost, productsProducedMin,
-                    productsProducedMax, baseSellingPrice, expYield, farmerType);
+            if (select == 0){
+                this.plantedSeed = new Turnip(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            }
+            else if (select == 1){
+                this.plantedSeed = new Carrot(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            } else if (select == 2) {
+                this.plantedSeed = new Potato(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            } else if (select == 3){
+                this.plantedSeed = new Rose(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            } else if (select == 4){
+                this.plantedSeed = new Tulips(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            } else if (select == 5){
+                this.plantedSeed = new Sunflower(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            } else if (select == 6){
+                this.plantedSeed = new Mango(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            } else if (select == 7){
+                this.plantedSeed = new Apple(name, cropType, harvestDayRequired,
+                        waterMin, waterMax,
+                        fertilizerMin, fertilizerMax,
+                        seedCost, productsProducedMin,
+                        productsProducedMax, baseSellingPrice, expYield, farmerType);
+            }
+
+
             this.occupied = true;
         }
 

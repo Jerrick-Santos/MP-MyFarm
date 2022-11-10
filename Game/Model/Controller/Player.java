@@ -127,7 +127,7 @@ public class Player {
         && this.land[row][col].getPlantedSeed() == null && !this.land[row][col].isRock())
         {
             if (select == 0 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
-                this.land[row][col].setPlantedSeed("Turnip", "Root Crop", 2,
+                this.land[row][col].setPlantedSeed(select, "Turnip", "Root Crop", 2,
                         1,2,
                         0,1,
                         5,
@@ -138,7 +138,7 @@ public class Player {
                 retVal = true;
             }
             else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
-                this.land[row][col].setPlantedSeed("Carrot", "Root Crop", 3,
+                this.land[row][col].setPlantedSeed(select,"Carrot", "Root Crop", 3,
                         1,2,
                         0,1,
                         10,
@@ -149,7 +149,7 @@ public class Player {
                 retVal = true;
             }
             else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
-                this.land[row][col].setPlantedSeed("Potato", "Root Crop", 5,
+                this.land[row][col].setPlantedSeed(select,"Potato", "Root Crop", 5,
                         3,4,
                         1,2,
                         20,
@@ -160,7 +160,7 @@ public class Player {
                 retVal = true;
             }
             else if (select == 3 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
-                this.land[row][col].setPlantedSeed("Rose", "Flower", 1,
+                this.land[row][col].setPlantedSeed(select,"Rose", "Flower", 1,
                         1,2,
                         0,1,
                         5,
@@ -171,7 +171,7 @@ public class Player {
                 retVal = true;
             }
             else if (select == 4 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
-                this.land[row][col].setPlantedSeed("Tulips", "Flower", 2,
+                this.land[row][col].setPlantedSeed(select,"Tulips", "Flower", 2,
                         2,3,
                         0,1,
                         10,
@@ -182,7 +182,7 @@ public class Player {
                 retVal = true;
             }
             else if (select == 5 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
-                this.land[row][col].setPlantedSeed("Sunflower", "Flower", 3,
+                this.land[row][col].setPlantedSeed(select,"Sunflower", "Flower", 3,
                         2,3,
                         1,2,
                         20,
@@ -194,7 +194,7 @@ public class Player {
             }
             else if (select == 6 && this.gameStats.getBalance() >= 100 - farmerType.getCostReduction() //FOR THE TREES!
             && checkOccupiedTilesAround(row, col)){
-                this.land[row][col].setPlantedSeed("Mango", "Fruit Tree", 10,
+                this.land[row][col].setPlantedSeed(select,"Mango", "Fruit Tree", 10,
                         7,7,
                         4,4,
                         100,
@@ -206,7 +206,7 @@ public class Player {
             }
             else if(select == 7 && this.gameStats.getBalance() >= 200 - farmerType.getCostReduction()
                     && checkOccupiedTilesAround(row, col)){
-                this.land[row][col].setPlantedSeed("Apple", "Fruit Tree", 10,
+                this.land[row][col].setPlantedSeed(select,"Apple", "Fruit Tree", 10,
                         7,7,
                         5,5,
                         200,
