@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Apple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Carrot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Driver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/FarmerType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Fertilizer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/FertilizerTool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/GameStats.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Mango.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Pickaxe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/PlowTool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Potato.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Rose.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Seed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Shovel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Sunflower.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Tile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Tool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Tulips.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Turnip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Water.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/WaterCan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/MP-MyFarm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MP-MyFarm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MP-MyFarm.iml" afterDir="false" />
+    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Added other plant types and implemented features for flower harvest and Fruit Tree planting">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,17 +22,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "18",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game.Driver" />
@@ -97,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667629401784</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added other plant types and implemented features for flower harvest and Fruit Tree planting">
+      <created>1668045929949</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668045929949</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
+    <MESSAGE value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
   </component>
 </project>

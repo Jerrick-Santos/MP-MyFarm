@@ -13,6 +13,7 @@ public class Driver {
         Tool Pickaxe = new Pickaxe("Pickaxe", 50, 15);
         Tool Shovel = new Shovel("Shovel", 7, 2);
 
+
         String name;
         System.out.print("Enter Your Name: ");
         Scanner scanner = new Scanner(System.in);
@@ -23,6 +24,7 @@ public class Driver {
 
         while (!player.endGame()){
             int selectMain, selectTool, selectPlant;
+            int row, col, choice;
 
             displayMainActions();
             selectMain = scanner.nextInt();
@@ -32,15 +34,64 @@ public class Driver {
                     selectTool = scanner.nextInt();
                     player.equipTool(selectTool);
                 }
-                case 1 -> player.useEquippedTool();
+                case 1 -> {
+                    System.out.print("Enter Row: ");
+                    row = scanner.nextInt();
+                    System.out.print("Enter Col: ");
+                    col = scanner.nextInt();
+                    player.useEquippedTool(row, col);
+                    if (player.updateLevel()){
+                        if (player.checkFarmerTypeUpgradeEligibility()){
+                            System.out.println("Note: Eligible for Farmer Type Upgrade");
+                        }
+                    }
+                }
                 case 2 -> player.nextDay();
                 case 3 -> {
+                    System.out.print("Enter Row: ");
+                    row = scanner.nextInt();
+                    System.out.print("Enter Col: ");
+                    col = scanner.nextInt();
                     displayPlantSeedOptions();
                     selectPlant = scanner.nextInt();
-                    player.plant(selectPlant);
+                    player.plant(selectPlant, row, col);
                 }
-                case 4 -> player.harvestPlant();
-                case 5 -> displayPlayerStatus(player);
+                case 4 -> {
+                    System.out.print("Enter Row: ");
+                    row = scanner.nextInt();
+                    System.out.print("Enter Col: ");
+                    col = scanner.nextInt();
+                    player.harvestPlant(row, col);
+
+                    if (player.updateLevel()){
+                        if (player.checkFarmerTypeUpgradeEligibility()){
+                            System.out.println("Note: Eligible for Farmer Type Upgrade");
+                        }
+                    }
+                }
+                case 5 -> {
+                    System.out.print("Enter Row: ");
+                    row = scanner.nextInt();
+                    System.out.print("Enter Col: ");
+                    col = scanner.nextInt();
+                    displayPlayerStatus(player, row, col);
+                }
+                case 6 -> {
+                    if (player.checkFarmerTypeUpgradeEligibility()){
+                        System.out.print("Do You want to upgrade Farmer Type COST[" + player.getFarmerType().getFee() + "]: ");
+                        choice = scanner.nextInt();
+
+                        if (player.updateFarmerType(choice)){
+                            System.out.println("Farmer Type Updated!");
+                        }
+                        else {
+                            System.out.println("Farmer Type Update Denied!");
+                        }
+                    }
+                    else{
+                        System.out.println("Warning: You are not Eligible for Farmer Type Update!");
+                    }
+                }
             }
         }
     }
@@ -55,11 +106,12 @@ public class Driver {
         System.out.println("[3] Plant to Tile");
         System.out.println("[4] Harvest Plant");
         System.out.println("[5] Check Player Status");
+        System.out.println("[6] Update Farmer Type");
 
         System.out.print("Enter an Action: ");
     }
 
-    public static void displayPlayerStatus(Player p){
+    public static void displayPlayerStatus(Player p, int row, int col){
         System.out.println();
         System.out.println("====================================================");
         System.out.println("Player Name: " + p.getName());
@@ -92,28 +144,28 @@ public class Driver {
 
         System.out.println("============");
         System.out.println("Tile Info: ");
-        System.out.println("Rock Presence: " +  p.getLand().isRock());
-        System.out.println("Plowed: " + p.getLand().isPlowed());
-        System.out.println("Occupied: " + p.getLand().isOccupied());
+        System.out.println("Rock Presence: " +  p.getLand(row,col).isRock());
+        System.out.println("Plowed: " + p.getLand(row,col).isPlowed());
+        System.out.println("Occupied: " + p.getLand(row,col).isOccupied());
 
         System.out.println("============");
-        if (p.getLand().getPlantedSeed() != null){
+        if (p.getLand(row,col).getPlantedSeed() != null){
             System.out.println("Planted Seed: " +
-                    p.getLand().getPlantedSeed().getName());
+                    p.getLand(row,col).getPlantedSeed().getName());
             System.out.println("Withered: " +
-                    p.getLand().getPlantedSeed().isWithered());
+                    p.getLand(row,col).getPlantedSeed().isWithered());
             System.out.println("Crop Maturity (in days): " +
-                    p.getLand().getPlantedSeed().getDaysPassed());
+                    p.getLand(row,col).getPlantedSeed().getDaysPassed());
             System.out.println("Harvest Day: " +
-                    (p.getLand().getPlantedSeed().getHarvestDayRequired()));
+                    (p.getLand(row,col).getPlantedSeed().getHarvestDayRequired()));
             System.out.println("Minimum Water Requirement: " +
-                    p.getLand().getPlantedSeed().getWater().getWaterMin());
+                    p.getLand(row,col).getPlantedSeed().getWater().getWaterMin());
             System.out.println("Times Crop Watered: " +
-                    p.getLand().getPlantedSeed().getWater().getTimesCropWatered());
+                    p.getLand(row,col).getPlantedSeed().getWater().getTimesCropWatered());
             System.out.println("Minimum Fertilizer Requirement: " +
-                    p.getLand().getPlantedSeed().getFertilizer().getFertilizerMin());
+                    p.getLand(row,col).getPlantedSeed().getFertilizer().getFertilizerMin());
             System.out.println("Times Crop Fertilized: " +
-                    p.getLand().getPlantedSeed().getFertilizer().getTimesCropFertilized());
+                    p.getLand(row,col).getPlantedSeed().getFertilizer().getTimesCropFertilized());
         }
         else {
             System.out.println("Planted Seed: None");
