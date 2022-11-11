@@ -3,28 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Carrot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Carrot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/FarmerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/FarmerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Fertilizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Fertilizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/FertilizerTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Mango.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Mango.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Pickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/PlowTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Potato.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Potato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Rose.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Shovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Sunflower.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Tulips.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Turnip.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Water.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/WaterCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,5 +79,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Game.*</FILTER>
+    </SUITE>
   </component>
 </project>
