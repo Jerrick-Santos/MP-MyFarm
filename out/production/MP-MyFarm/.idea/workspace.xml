@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e377e8d5-65d8-4f0d-a54b-9489821164f7" name="Changes" comment="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java">
+      <change afterPath="$PROJECT_DIR$/MP-MyFarm.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="DriverTest" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GZ9gq6GfaXToAAe8qat38N7wqq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "18",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Driver" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Game.Driver" />
+      <module name="MP-MyFarm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e377e8d5-65d8-4f0d-a54b-9489821164f7" name="Changes" comment="" />
+      <created>1666585352718</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666585352718</updated>
+      <workItem from="1666585354419" duration="36778000" />
+    </task>
+    <task id="LOCAL-00001" summary="Change data type from 'String' to 'int' -- attribute : harvestDayRequired">
+      <created>1666589734207</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666589734207</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added in Tile.java -- added constructor, setters, and getters.">
+      <created>1666590067511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666590067511</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added 'extends' throughout all seeds -- Apple, Carrot, Mango, Potato, Rose, Sunflower, Turnip, Turnips.">
+      <created>1666599611331</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666599611331</updated>
+    </task>
+    <task id="LOCAL-00004" summary="For Seed.java,&#10;*Added attributes to Seed.java -- int productsProducedMin, int productsProducedMax.&#10;*Updated constructor of Seed.java -- added new attributes: productsProducedMin, productsProducedMax.&#10;*Added computation for computeFinalPrice()&#10;&#10;For Tile.java&#10;*Updated parameters for setPlantedSeed()">
+      <created>1666934455857</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666934455857</updated>
+    </task>
+    <task id="LOCAL-00005" summary="*Added semicolon for lines 27 and 40.">
+      <created>1666935110141</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666935110141</updated>
+    </task>
+    <task id="LOCAL-00006" summary="For Player.java,&#10;- Added logic to harvestPlant()&#10;- Added logic to updateLevel()&#10;- Added logic to updateFarmerType()&#10;- Added getters -- getFarmerType(), getGameStats()&#10;&#10;For FarmerType.java,&#10;- Changed attribute name farmerType to farmerTypeName">
+      <created>1666937869609</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666937869609</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added main logic to Driver.java">
+      <created>1667232937644</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667232937644</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java">
+      <created>1667487852105</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667487852105</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change data type from 'String' to 'int' -- attribute : harvestDayRequired" />
+    <MESSAGE value="Added in Tile.java -- added constructor, setters, and getters." />
+    <MESSAGE value="Added 'extends' throughout all seeds -- Apple, Carrot, Mango, Potato, Rose, Sunflower, Turnip, Turnips." />
+    <MESSAGE value="For Seed.java,&#10;*Added attributes to Seed.java -- int productsProducedMin, int productsProducedMax.&#10;*Updated constructor of Seed.java -- added new attributes: productsProducedMin, productsProducedMax.&#10;*Added computation for computeFinalPrice()&#10;&#10;For Tile.java&#10;*Updated parameters for setPlantedSeed()" />
+    <MESSAGE value="*Added semicolon for lines 27 and 40." />
+    <MESSAGE value="For Player.java,&#10;- Added logic to harvestPlant()&#10;- Added logic to updateLevel()&#10;- Added logic to updateFarmerType()&#10;- Added getters -- getFarmerType(), getGameStats()&#10;&#10;For FarmerType.java,&#10;- Changed attribute name farmerType to farmerTypeName" />
+    <MESSAGE value="Added main logic to Driver.java" />
+    <MESSAGE value="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added documentation to GameStats.java, FarmerType.java, Water.java, and Fertilizer.java" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Game.*</FILTER>
+    </SUITE>
+  </component>
+</project>
