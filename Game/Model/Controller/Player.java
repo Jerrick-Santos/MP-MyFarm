@@ -384,12 +384,15 @@ public class Player {
         boolean retVal = false;
         if (this.level >= 5 && this.level < 10 && this.gameStats.getBalance() >= 200 && !this.farmerType.getFarmerTypeName().equals("Registered Farmer")) {
             this.farmerType.setFee(200);
+            this.farmerType.setLevelRequirement(5);
             retVal = true;
         } else if (this.level >= 10 && this.level < 15 && this.gameStats.getBalance() >= 300 && !this.farmerType.getFarmerTypeName().equals("Distinguished Farmer")) {
             this.farmerType.setFee(300);
+            this.farmerType.setLevelRequirement(10);
             retVal = true;
         } else if (this.level >= 15 && this.gameStats.getBalance() >= 400 && !this.farmerType.getFarmerTypeName().equals("Legendary Farmer")){
             this.farmerType.setFee(400);
+            this.farmerType.setLevelRequirement(15);
             retVal = true;
         }
 
@@ -404,19 +407,13 @@ public class Player {
         boolean retVal = false;
         if (this.level >= 5 && this.level < 10 && this.gameStats.getBalance() >= 200 && !this.farmerType.getFarmerTypeName().equals("Registered Farmer")) {
             if (choice == 1) {
-                this.farmerType.setFarmerTypeName("Registered Farmer");
-                this.farmerType.setBonusEarns(1);
-                this.farmerType.setCostReduction(1);
+                this.farmerType.updateFarmerLevel();
                 this.gameStats.deductWallet(this.farmerType.getFee());
                 retVal = true;
             }
         } else if (this.level >= 10 && this.level < 15 && this.gameStats.getBalance() >= 300 && !this.farmerType.getFarmerTypeName().equals("Distinguished Farmer")) {
             if (choice == 1) {
-                this.farmerType.setFarmerTypeName("Distinguished Farmer");
-                this.farmerType.setBonusEarns(2);
-                this.farmerType.setCostReduction(2);
-                this.farmerType.setWaterIncrease(1);
-
+                this.farmerType.updateFarmerLevel();
                 for (int i = 0; i < 10; i++) {
                     for (int j = 0; j < 5; j++) {
                         if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
@@ -424,18 +421,12 @@ public class Player {
                         }
                     }
                 }
-
                 this.gameStats.deductWallet(this.farmerType.getFee());
                 retVal = true;
             }
         } else if (this.level >= 15 && this.gameStats.getBalance() >= 400 && !this.farmerType.getFarmerTypeName().equals("Legendary Farmer")){
             if (choice == 1){
-                this.farmerType.setFarmerTypeName("Legendary Farmer");
-                this.farmerType.setBonusEarns(4);
-                this.farmerType.setCostReduction(3);
-                this.farmerType.setWaterIncrease(2);
-                this.farmerType.setFertilizerIncrease(1);
-
+                this.farmerType.updateFarmerLevel();
                 for (int i = 0; i < 10; i++) {
                     for (int j = 0; j < 5; j++) {
                         if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
@@ -444,7 +435,6 @@ public class Player {
                         }
                     }
                 }
-
                 this.gameStats.deductWallet(this.farmerType.getFee());
                 retVal = true;
             }

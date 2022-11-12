@@ -14,6 +14,7 @@ public class FarmerType {
     private int costReduction;
     private int waterIncrease;
     private int fertilizerIncrease;
+    private int farmerLevel;
     private double fee;
 
     /**
@@ -27,7 +28,35 @@ public class FarmerType {
         this.costReduction = 0;
         this.waterIncrease = 0;
         this.fertilizerIncrease = 0;
+        this.farmerLevel = 0;
         this.fee = 0;
+    }
+
+    public void updateFarmerLevel(){
+        if (this.farmerLevel == 0){
+            this.farmerTypeName = "Registered Farmer";
+            this.bonusEarns = 1;
+            this.costReduction = 1;
+            this.fee = 200;
+            this.farmerLevel++;
+        }
+        else if (this.farmerLevel == 1){
+            this.farmerTypeName = "Distinguished Farmer";
+            this.bonusEarns = 2;
+            this.costReduction = 2;
+            this.waterIncrease = 1;
+            this.fee = 300;
+            this.farmerLevel++;
+        }
+        else if (this.farmerLevel == 2){
+            this.farmerTypeName = "Legendary Farmer";
+            this.bonusEarns = 4;
+            this.costReduction = 3;
+            this.waterIncrease = 2;
+            this.fertilizerIncrease = 1;
+            this.fee = 400;
+            this.farmerLevel++;
+        }
     }
 
     /**
