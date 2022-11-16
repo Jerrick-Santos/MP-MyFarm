@@ -18,13 +18,11 @@ public class PlowTool extends Tool{
 
     /**
      * Turns the unplowed tile to a plowed tile
-     * @param obj - Takes tile as parameter
+     * @param tile - Takes tile as parameter
      * @return true if the tool can be used, false if not
      */
-    public boolean useTool(Object obj) {
+    public boolean useTool(Tile tile) {
         boolean retVal = false;
-        if (obj instanceof Tile) { //checks if the obj is a tile
-            Tile tile = (Tile) obj;
             if (!tile.isPlowed()) {
                 tile.setPlowed(true);
                 retVal = true;
@@ -34,10 +32,6 @@ public class PlowTool extends Tool{
                 retVal = false;
                 System.out.println("Warning: Cannot use Plow Tool - Tile is already plowed.");
             }
-        }
-        else {
-            retVal = false;
-        }
 
         return retVal;
     }

@@ -8,7 +8,7 @@ import Game.Model.Controller.FarmerType;
  *
  * This class is a template for other subclasses (i.e., this class is a parent class)
  */
-public class Seed {
+public abstract class Seed {
     private String name;
     private String cropType;
     private int harvestDayRequired;

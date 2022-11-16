@@ -22,10 +22,8 @@ public class Pickaxe extends Tool{
      * @return true if the tool can be used, false if not
      */
     @Override
-    public boolean useTool(Object obj) {
+    public boolean useTool(Tile tile) {
         boolean retVal;
-        if (obj instanceof Tile) {
-            Tile tile = (Tile) obj;
             if (tile.isRock()) { //checks if there is a rock
                 tile.setRock(false);
                 retVal = true;
@@ -34,10 +32,6 @@ public class Pickaxe extends Tool{
                 retVal = false;
                 System.out.println("Warning: Cannot use Pickaxe - rock is not present");
             }
-        }
-        else {
-            retVal = false;
-        }
 
         return retVal;
     }

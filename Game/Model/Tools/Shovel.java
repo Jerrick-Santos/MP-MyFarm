@@ -19,14 +19,12 @@ public class Shovel extends Tool{
 
     /**
      * removes a seed (withered or not)
-     * @param obj - Takes tile as parameter
+     * @param tile - Takes tile as parameter
      * @return true if the tool can be used, false if not
      */
     @Override
-    public boolean useTool(Object obj) {
+    public boolean useTool(Tile tile) {
         boolean retVal = false;
-        if (obj instanceof Tile) {
-            Tile tile = (Tile) obj;
             if (tile.isRock() || !tile.isPlowed()) { //checks if rock exists or tile is not plowed
                 retVal = true;
             } else if (tile.isOccupied() && tile.getPlantedSeed() != null) { //checks if a plant exists
@@ -36,11 +34,6 @@ public class Shovel extends Tool{
                 tile.setOccupied(false);
                 System.out.println("GameChange: Plant has been removed");
             }
-        }
-        else {
-            retVal = false;
-        }
-
         return retVal;
     }
 

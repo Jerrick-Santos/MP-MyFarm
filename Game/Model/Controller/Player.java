@@ -472,4 +472,11 @@ public class Player {
     public int getSelectedTool() {
         return selectedTool;
     }
+
+    //MISC
+
+    public void adminControl(double addWallet, double addExp){
+        this.gameStats.addWallet(addWallet);
+        this.gameStats.gainExp(addExp);
+    }
 }

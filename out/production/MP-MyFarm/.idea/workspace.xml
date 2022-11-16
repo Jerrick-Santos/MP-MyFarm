@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Added other plant types and implemented features for flower harvest and Fruit Tree planting">
+    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Updated FarmerType mechanism">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,16 +23,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "18",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game.Driver" />
@@ -75,7 +76,28 @@
       <option name="project" value="LOCAL" />
       <updated>1668045929949</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed code in Driver and edited updateFarmerType and also added a checkFarmerType Eligibility method in Player">
+      <created>1668065957874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668065957874</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implemented Inheritance model on Seeds">
+      <created>1668073221275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668073221275</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated FarmerType mechanism">
+      <created>1668271565501</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668271565501</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +114,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
     <MESSAGE value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
+    <MESSAGE value="Fixed code in Driver and edited updateFarmerType and also added a checkFarmerType Eligibility method in Player" />
+    <MESSAGE value="Implemented Inheritance model on Seeds" />
+    <MESSAGE value="Updated FarmerType mechanism" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated FarmerType mechanism" />
   </component>
 </project>

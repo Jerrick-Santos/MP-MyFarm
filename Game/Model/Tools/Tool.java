@@ -1,4 +1,5 @@
 package Game.Model.Tools;
+import Game.Model.Controller.Tile;
 
 /**
  * This is the Tool class which is an abstract class. The purpose of this class is only to provide a template
@@ -41,6 +42,6 @@ public abstract class Tool {
      * @param obj - the object taken input is a tile which will be used in the child classes
      * @return
      */
-    public abstract boolean useTool(Object obj);
+    public abstract boolean useTool(Tile tile);
 
 }

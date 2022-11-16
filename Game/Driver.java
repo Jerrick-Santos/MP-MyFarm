@@ -25,6 +25,7 @@ public class Driver {
         while (!player.endGame()){
             int selectMain, selectTool, selectPlant;
             int row, col, choice;
+            double walletAdd, expAdd;
 
             displayMainActions();
             selectMain = scanner.nextInt();
@@ -92,6 +93,20 @@ public class Driver {
                         System.out.println("Warning: You are not Eligible for Farmer Type Update!");
                     }
                 }
+                case 7 -> {
+                    System.out.print("Enter Wallet Add: ");
+                    walletAdd = scanner.nextDouble();
+                    System.out.println("Enter Exp Add: ");
+                    expAdd = scanner.nextDouble();
+                    player.adminControl(walletAdd, expAdd);
+
+                    if (player.updateLevel()){
+                        if (player.checkFarmerTypeUpgradeEligibility()){
+                            System.out.println("Note: Eligible for Farmer Type Upgrade");
+                        }
+                    }
+
+                }
             }
         }
     }
@@ -107,6 +122,7 @@ public class Driver {
         System.out.println("[4] Harvest Plant");
         System.out.println("[5] Check Player Status");
         System.out.println("[6] Update Farmer Type");
+        System.out.println("[7] Admin Controls");
 
         System.out.print("Enter an Action: ");
     }
