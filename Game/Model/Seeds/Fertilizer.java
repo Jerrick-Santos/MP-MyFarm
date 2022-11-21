@@ -1,6 +1,6 @@
 package Game.Model.Seeds;
 
-import Game.Model.Controller.FarmerType;
+import Game.Model.FarmerTypes.FarmerType;
 
 /**
  * The Fertilizer Class contains the information needed for fertilizing a

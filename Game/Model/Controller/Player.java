@@ -5,6 +5,7 @@ package Game.Model.Controller;
  * game mechanics such as to plant, harvest, equip a tool, use a tool and proceed to next day.
  */
 
+import Game.Model.FarmerTypes.*;
 import Game.Model.Tools.Tool;
 
 import java.io.File;
@@ -17,7 +18,9 @@ public class Player {
     private String name;
     private int level;
     private int passedDays;
-    private FarmerType farmerType;
+    private ArrayList<FarmerType> farmerTypeList;
+
+    private int farmerTypeIndex;
     private GameStats gameStats;
     private Tile[][] land;
     private ArrayList<Tool> toolSetList;
@@ -36,7 +39,12 @@ public class Player {
         this.name = name;
         this.level = 0;
         this.passedDays = 0;
-        this.farmerType = new FarmerType();
+        this.farmerTypeList = new ArrayList<>(Arrays.asList(
+                new Farmer(), new RegisteredFarmer(),
+                new DistinguishedFarmer(),
+                new LegendaryFarmer()
+        ));
+        this.farmerTypeIndex = 0;
         this.gameStats = new GameStats();
         this.land = new Tile[10][5];
         for (int i = 0; i < 10; i++) {
@@ -160,93 +168,93 @@ public class Player {
         if (this.land[row][col].isPlowed() && !this.land[row][col].isOccupied()
         && this.land[row][col].getPlantedSeed() == null && !this.land[row][col].isRock())
         {
-            if (select == 0 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
+            if (select == 0 && this.gameStats.getBalance() >= 5 - farmerTypeList.get(farmerTypeIndex).getCostReduction()){
                 this.land[row][col].setPlantedSeed(select, "Turnip", "Root Crop", 2,
                         1,2,
                         0,1,
                         5,
                         1,2,
-                        6,5, this.farmerType);
+                        6,5, this.farmerTypeList.get(farmerTypeIndex));
                 System.out.println("Note: Turnip planted!");
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 retVal = true;
             }
-            else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+            else if (select == 1 && this.gameStats.getBalance() >= 10 - farmerTypeList.get(farmerTypeIndex).getCostReduction()){
                 this.land[row][col].setPlantedSeed(select,"Carrot", "Root Crop", 3,
                         1,2,
                         0,1,
                         10,
                         1,2,
-                        9,7.5, this.farmerType);
+                        9,7.5, this.farmerTypeList.get(farmerTypeIndex));
                 System.out.println("Note: Carrot planted!");
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 retVal = true;
             }
-            else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
+            else if (select == 2 && this.gameStats.getBalance() >= 20 - farmerTypeList.get(farmerTypeIndex).getCostReduction()){
                 this.land[row][col].setPlantedSeed(select,"Potato", "Root Crop", 5,
                         3,4,
                         1,2,
                         20,
                         1,10,
-                        3,12.5, this.farmerType);
+                        3,12.5, this.farmerTypeList.get(farmerTypeIndex));
                 System.out.println("Note: Potato planted!");
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 retVal = true;
             }
-            else if (select == 3 && this.gameStats.getBalance() >= 5 - farmerType.getCostReduction()){
+            else if (select == 3 && this.gameStats.getBalance() >= 5 - farmerTypeList.get(farmerTypeIndex).getCostReduction()){
                 this.land[row][col].setPlantedSeed(select,"Rose", "Flower", 1,
                         1,2,
                         0,1,
                         5,
                         1,1,
-                        5,2.5, this.farmerType);
+                        5,2.5, this.farmerTypeList.get(farmerTypeIndex));
                 System.out.println("Note: Rose planted!");
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 retVal = true;
             }
-            else if (select == 4 && this.gameStats.getBalance() >= 10 - farmerType.getCostReduction()){
+            else if (select == 4 && this.gameStats.getBalance() >= 10 - farmerTypeList.get(farmerTypeIndex).getCostReduction()){
                 this.land[row][col].setPlantedSeed(select,"Tulips", "Flower", 2,
                         2,3,
                         0,1,
                         10,
                         1,1,
-                        9,5, this.farmerType);
+                        9,5, this.farmerTypeList.get(farmerTypeIndex));
                 System.out.println("Note: Tulips planted!");
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 retVal = true;
             }
-            else if (select == 5 && this.gameStats.getBalance() >= 20 - farmerType.getCostReduction()){
+            else if (select == 5 && this.gameStats.getBalance() >= 20 - farmerTypeList.get(farmerTypeIndex).getCostReduction()){
                 this.land[row][col].setPlantedSeed(select,"Sunflower", "Flower", 3,
                         2,3,
                         1,2,
                         20,
                         1,1,
-                        19,7.5, this.farmerType);
+                        19,7.5, this.farmerTypeList.get(farmerTypeIndex));
                 System.out.println("Note: Sunflower planted!");
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 retVal = true;
             }
-            else if (select == 6 && this.gameStats.getBalance() >= 100 - farmerType.getCostReduction() //FOR THE TREES!
+            else if (select == 6 && this.gameStats.getBalance() >= 100 - farmerTypeList.get(farmerTypeIndex).getCostReduction() //FOR THE TREES!
             && checkOccupiedTilesAround(row, col)){
                 this.land[row][col].setPlantedSeed(select,"Mango", "Fruit Tree", 10,
                         7,7,
                         4,4,
                         100,
                         5,15,
-                        8,25, this.farmerType);
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                        8,25, this.farmerTypeList.get(farmerTypeIndex));
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 System.out.println("Note: Mango Planted");
                 retVal = true;
             }
-            else if(select == 7 && this.gameStats.getBalance() >= 200 - farmerType.getCostReduction()
+            else if(select == 7 && this.gameStats.getBalance() >= 200 - farmerTypeList.get(farmerTypeIndex).getCostReduction()
                     && checkOccupiedTilesAround(row, col)){
                 this.land[row][col].setPlantedSeed(select,"Apple", "Fruit Tree", 10,
                         7,7,
                         5,5,
                         200,
                         10,15,
-                        5,25, this.farmerType);
-                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
+                        5,25, this.farmerTypeList.get(farmerTypeIndex));
+                this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 System.out.println("Note: Apple Planted");
                 retVal = true;
             } else{
@@ -278,7 +286,7 @@ public class Player {
             && !this.land[row][col].getPlantedSeed().isWithered()
             && this.land[row][col].getPlantedSeed().getHarvestDayRequired() == this.land[row][col].getPlantedSeed().getDaysPassed()){
             System.out.println(this.land[row][col].getPlantedSeed().getName() + " has been harvested.");
-            this.gameStats.addWallet(this.land[row][col].getPlantedSeed().computeFinalPrice(this.farmerType));
+            this.gameStats.addWallet(this.land[row][col].getPlantedSeed().computeFinalPrice(this.farmerTypeList.get(farmerTypeIndex)));
             this.gameStats.gainExp(this.land[row][col].getPlantedSeed().getExpYield());
             this.land[row][col].removePlantedSeed();
             this.land[row][col].setOccupied(false);
@@ -414,20 +422,13 @@ public class Player {
 
     public boolean checkFarmerTypeUpgradeEligibility() {
         boolean retVal = false;
-        if (this.level >= 5 && this.level < 10 && this.gameStats.getBalance() >= 200 && !this.farmerType.getFarmerTypeName().equals("Registered Farmer")) {
-            this.farmerType.setFee(200);
-            this.farmerType.setLevelRequirement(5);
+        if (this.level >= 5 && this.level < 10 && this.gameStats.getBalance() >= 200 && !this.farmerTypeList.get(farmerTypeIndex).getFarmerTypeName().equals("Registered Farmer")) {
             retVal = true;
-        } else if (this.level >= 10 && this.level < 15 && this.gameStats.getBalance() >= 300 && !this.farmerType.getFarmerTypeName().equals("Distinguished Farmer")) {
-            this.farmerType.setFee(300);
-            this.farmerType.setLevelRequirement(10);
+        } else if (this.level >= 10 && this.level < 15 && this.gameStats.getBalance() >= 300 && !this.farmerTypeList.get(farmerTypeIndex).getFarmerTypeName().equals("Distinguished Farmer")) {
             retVal = true;
-        } else if (this.level >= 15 && this.gameStats.getBalance() >= 400 && !this.farmerType.getFarmerTypeName().equals("Legendary Farmer")){
-            this.farmerType.setFee(400);
-            this.farmerType.setLevelRequirement(15);
+        } else if (this.level >= 15 && this.gameStats.getBalance() >= 400 && !this.farmerTypeList.get(farmerTypeIndex).getFarmerTypeName().equals("Legendary Farmer")){
             retVal = true;
         }
-
         return retVal;
     }
 
@@ -437,37 +438,37 @@ public class Player {
      */
     public boolean updateFarmerType(int choice) {
         boolean retVal = false;
-        if (this.level >= 5 && this.level < 10 && this.gameStats.getBalance() >= 200 && !this.farmerType.getFarmerTypeName().equals("Registered Farmer")) {
+        if (this.level >= 5 && this.level < 10 && this.gameStats.getBalance() >= 200 && !this.farmerTypeList.get(farmerTypeIndex).getFarmerTypeName().equals("Registered Farmer")) {
             if (choice == 1) {
-                this.farmerType.updateFarmerLevel();
-                this.gameStats.deductWallet(this.farmerType.getFee());
+                this.farmerTypeIndex++;
+                this.gameStats.deductWallet(this.farmerTypeList.get(farmerTypeIndex).getFee());
                 retVal = true;
             }
-        } else if (this.level >= 10 && this.level < 15 && this.gameStats.getBalance() >= 300 && !this.farmerType.getFarmerTypeName().equals("Distinguished Farmer")) {
+        } else if (this.level >= 10 && this.level < 15 && this.gameStats.getBalance() >= 300 && !this.farmerTypeList.get(farmerTypeIndex).getFarmerTypeName().equals("Distinguished Farmer")) {
             if (choice == 1) {
-                this.farmerType.updateFarmerLevel();
+                this.farmerTypeIndex++;
                 for (int i = 0; i < 10; i++) {
                     for (int j = 0; j < 5; j++) {
                         if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
-                            this.land[i][j].getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
+                            this.land[i][j].getPlantedSeed().getWater().addWaterMax(this.farmerTypeList.get(farmerTypeIndex).getWaterIncrease());
                         }
                     }
                 }
-                this.gameStats.deductWallet(this.farmerType.getFee());
+                this.gameStats.deductWallet(this.farmerTypeList.get(farmerTypeIndex).getFee());
                 retVal = true;
             }
-        } else if (this.level >= 15 && this.gameStats.getBalance() >= 400 && !this.farmerType.getFarmerTypeName().equals("Legendary Farmer")){
+        } else if (this.level >= 15 && this.gameStats.getBalance() >= 400 && !this.farmerTypeList.get(farmerTypeIndex).getFarmerTypeName().equals("Legendary Farmer")){
             if (choice == 1){
-                this.farmerType.updateFarmerLevel();
+                this.farmerTypeIndex++;
                 for (int i = 0; i < 10; i++) {
                     for (int j = 0; j < 5; j++) {
                         if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
-                            this.land[i][j].getPlantedSeed().getWater().addWaterMax(this.farmerType.getWaterIncrease());
-                            this.land[i][j].getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerType.getFertilizerIncrease());
+                            this.land[i][j].getPlantedSeed().getWater().addWaterMax(this.farmerTypeList.get(farmerTypeIndex).getWaterIncrease());
+                            this.land[i][j].getPlantedSeed().getFertilizer().addFertilizerMax(this.farmerTypeList.get(farmerTypeIndex).getFertilizerIncrease());
                         }
                     }
                 }
-                this.gameStats.deductWallet(this.farmerType.getFee());
+                this.gameStats.deductWallet(this.farmerTypeList.get(farmerTypeIndex).getFee());
                 retVal = true;
             }
         }
@@ -478,7 +479,7 @@ public class Player {
     //GETTERS
 
     public FarmerType getFarmerType() {
-        return farmerType;
+        return farmerTypeList.get(farmerTypeIndex);
     }
 
     public GameStats getGameStats() {

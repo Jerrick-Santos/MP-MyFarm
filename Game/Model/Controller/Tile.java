@@ -1,5 +1,6 @@
 package Game.Model.Controller;
 
+import Game.Model.FarmerTypes.FarmerType;
 import Game.Model.Seeds.*;
 
 public class Tile {

@@ -174,10 +174,14 @@ public class Driver {
                     p.getLand(row,col).getPlantedSeed().getDaysPassed());
             System.out.println("Harvest Day: " +
                     (p.getLand(row,col).getPlantedSeed().getHarvestDayRequired()));
+            System.out.println("Maximum Water Requirement: " +
+                    p.getLand(row,col).getPlantedSeed().getWater().getWaterMax());
             System.out.println("Minimum Water Requirement: " +
                     p.getLand(row,col).getPlantedSeed().getWater().getWaterMin());
             System.out.println("Times Crop Watered: " +
                     p.getLand(row,col).getPlantedSeed().getWater().getTimesCropWatered());
+            System.out.println("Maximum Fertilizer Requirement: " +
+                    p.getLand(row,col).getPlantedSeed().getFertilizer().getFertilizerMax());
             System.out.println("Minimum Fertilizer Requirement: " +
                     p.getLand(row,col).getPlantedSeed().getFertilizer().getFertilizerMin());
             System.out.println("Times Crop Fertilized: " +
