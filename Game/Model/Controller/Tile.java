@@ -33,6 +33,7 @@ public class Tile {
 
     public void setRock(boolean rock) {
         this.rock = rock;
+        this.occupied = true;
     }
 
     public void setOccupied(boolean occupied) {

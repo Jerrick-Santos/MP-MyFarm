@@ -23,14 +23,14 @@ public class PlowTool extends Tool{
      */
     public boolean useTool(Tile tile) {
         boolean retVal = false;
-            if (!tile.isPlowed()) {
+            if (!tile.isPlowed() && !tile.isRock()) {
                 tile.setPlowed(true);
                 retVal = true;
                 System.out.println("Note: Tile has been plowed");
             }
             else {
                 retVal = false;
-                System.out.println("Warning: Cannot use Plow Tool - Tile is already plowed.");
+                System.out.println("Warning: Cannot use Plow Tool");
             }
 
         return retVal;

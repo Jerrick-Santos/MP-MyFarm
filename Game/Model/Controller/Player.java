@@ -7,8 +7,11 @@ package Game.Model.Controller;
 
 import Game.Model.Tools.Tool;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Player {
     private String name;
@@ -29,7 +32,7 @@ public class Player {
      * @param tool4 - Pickaxe
      * @param tool5 - Shovel
      */
-    public Player(String name, Tool tool1, Tool tool2, Tool tool3, Tool tool4, Tool tool5) {
+    public Player(String name, Tool tool1, Tool tool2, Tool tool3, Tool tool4, Tool tool5){
         this.name = name;
         this.level = 0;
         this.passedDays = 0;
@@ -43,6 +46,27 @@ public class Player {
         }
         this.toolSetList = new ArrayList<>(Arrays.asList(tool1, tool2, tool3, tool4, tool5)); //takes input from pre-constructed tool variables in main
         this.selectedTool = -1;
+
+        File rockMap = new File("Game\\Model\\Controller\\RockMapping.txt");
+
+        mapRocksInitialization(rockMap);
+    }
+
+    public void mapRocksInitialization(File rockMap){
+        int row, col;
+        String[] coordinates;
+        try {
+            Scanner scanner = new Scanner(rockMap);
+            while (scanner.hasNextLine()){
+                coordinates = scanner.nextLine().split("-",2);
+                row = Integer.parseInt(coordinates[0]);
+                col = Integer.parseInt(coordinates[1]);
+                this.land[row][col].setRock(true);
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     /**
@@ -52,16 +76,21 @@ public class Player {
     public boolean endGame(){ //currently only works on a single tile
         boolean retVal = false;
         int tilesWithWitheredSeed = 0;
+        boolean checkForActiveSeeds = false;
+
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {
                 if (this.land[i][j].getPlantedSeed() != null && this.land[i][j].getPlantedSeed().isWithered()){
                     tilesWithWitheredSeed++;
                 }
+                else if (this.land[i][j].getPlantedSeed() != null && !this.land[i][j].getPlantedSeed().isWithered()){
+                    checkForActiveSeeds = true;
+                }
             }
         }
 
-        if ((tilesWithWitheredSeed == 50 && this.gameStats.getBalance() < 3) || tilesWithWitheredSeed == 50){
+        if ((!checkForActiveSeeds && this.gameStats.getBalance() < 3) || tilesWithWitheredSeed == 50){
             retVal = true;
         }
 
@@ -103,12 +132,17 @@ public class Player {
     public boolean checkOccupiedTilesAround(int row, int col){
         boolean retVal = false;
 
-        if ((row != 0 && row != land.length - 1) && (col != 0 && col != land.length - 1)){ //Checks if the coordinaters are planted in the edges
+        if ((row != 0 && row != 9) && (col != 0 && col != 4)){ //Checks if the coordinaters are planted in the edges
             if (!land[row - 1][col - 1].isOccupied() && !land[row - 1][col].isOccupied() && !land[row - 1][col + 1].isOccupied()
             && !land[row][col - 1].isOccupied() && !land[row][col + 1].isOccupied()
             && !land[row + 1][col - 1].isOccupied() && !land[row + 1][col].isOccupied() && !land[row + 1][col + 1].isOccupied()){
                 retVal = true;
             }
+
+            System.out.println("Warning: Cannot plant. Surrounding Tiles are Occupied");
+        }
+        else {
+            System.out.println("Warning: Cant Plant on Sides");
         }
 
         return retVal;
@@ -215,8 +249,6 @@ public class Player {
                 this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerType.getCostReduction());
                 System.out.println("Note: Apple Planted");
                 retVal = true;
-            } else if ((select == 6 || select == 7) && !checkOccupiedTilesAround(row, col)) {
-                System.out.println("Warning: Cannot plant. Surrounding Tiles are Occupied");
             } else{
                 System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }

@@ -18,7 +18,7 @@ public class Pickaxe extends Tool{
 
     /**
      * removes a rock
-     * @param obj - the object taken input is a tile which will be used in the child classes
+     * @param tile - the object taken input is a tile which will be used in the child classes
      * @return true if the tool can be used, false if not
      */
     @Override

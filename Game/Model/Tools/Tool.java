@@ -39,7 +39,7 @@ public abstract class Tool {
 
     /**
      * This method actually uses the tool based on their required functions and behaviours.
-     * @param obj - the object taken input is a tile which will be used in the child classes
+     * @param tile - the object taken input is a tile which will be used in the child classes
      * @return
      */
     public abstract boolean useTool(Tile tile);
