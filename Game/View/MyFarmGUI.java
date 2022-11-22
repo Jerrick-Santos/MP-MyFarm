@@ -91,6 +91,14 @@ public class MyFarmGUI extends JFrame{
         JLabel expVal = new JLabel("5");
         expVal.setFont(new Font("Arial", Font.BOLD, 14));
 
+        JLabel spacee = new JLabel("                                                                                          ");
+
+        JButton updateFT = new JButton("Prestige Up");
+        updateFT.setBackground(Color.GREEN);
+        updateFT.setForeground(Color.BLACK);
+        updateFT.setFont(new Font("Arial", Font.BOLD, 14));
+        updateFT.setUI(new StyledButtonUI());
+
         panelNorth.add(levelLbl);
         panelNorth.add(levelVal);
         panelNorth.add(space);
@@ -99,6 +107,8 @@ public class MyFarmGUI extends JFrame{
         panelNorth.add(space2);
         panelNorth.add(expLbl);
         panelNorth.add(expVal);
+        panelNorth.add(spacee);
+        panelNorth.add(updateFT);
 
         mainContainer.add(panelNorth, BorderLayout.NORTH);
 
@@ -123,18 +133,21 @@ public class MyFarmGUI extends JFrame{
 
             //Center Panel
             JPanel panelEastCENTER = new JPanel();
-            panelEastCENTER.setLayout(new FlowLayout(FlowLayout.CENTER));
+            panelEastCENTER.setLayout(new BorderLayout());
             panelEastCENTER.setBackground(Color.decode("#A9AF7E"));
 
-                JPanel panelEastCenterSOUTH = new JPanel();
+                //South Panel of CENTER
+                RoundedPanel panelEastCenterSOUTH = new RoundedPanel();
                 panelEastCenterSOUTH.setLayout(new FlowLayout(FlowLayout.CENTER));
                 panelEastCenterSOUTH.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
                 panelEastCenterSOUTH.setBackground(Color.decode("#E6E5A3"));
 
-                JLabel plantLbl = new JLabel("x, y");
+                JLabel plantLbl = new JLabel("Turnip");
                 plantLbl.setFont(new Font("Arial", Font.BOLD, 14));
                 plantLbl.setForeground(Color.black);
-                panelEastNORTH.add(plantLbl);
+                panelEastCenterSOUTH.add(plantLbl);
+
+                panelEastCENTER.add(panelEastCenterSOUTH, BorderLayout.SOUTH);
             /*
             JTextArea textDesc = new JTextArea(
                     """
@@ -163,25 +176,25 @@ public class MyFarmGUI extends JFrame{
             RoundedPanel panelEastSOUTH = new RoundedPanel();
             panelEastSOUTH.setLayout(new FlowLayout());
             panelEastSOUTH.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
-            panelEastSOUTH.setBackground(Color.decode("#A9AF7E"));
+            panelEastSOUTH.setBackground(Color.decode("#E6E5A3"));
 
             JButton btnUse = new JButton("Use Tool");
             btnUse.setFont(new Font("Arial", Font.BOLD, 14));
-            btnUse.setBackground(Color.decode("#E6E5A3"));
+            //btnUse.setBackground(Color.decode("#E6E5A3"));
             btnUse.setForeground(Color.black);
             btnUse.setUI(new StyledButtonUI());
             panelEastSOUTH.add(btnUse);
 
             JButton btnPlant = new JButton("Plant");
             btnPlant.setFont(new Font("Arial", Font.BOLD, 14));
-            btnPlant.setBackground(Color.decode("#E6E5A3"));
+            //btnPlant.setBackground(Color.decode("#E6E5A3"));
             btnPlant.setForeground(Color.black);
             btnPlant.setUI(new StyledButtonUI());
             panelEastSOUTH.add(btnPlant);
 
             JButton btnHarvest = new JButton("Harvest");
             btnHarvest.setFont(new Font("Arial", Font.BOLD, 14));
-            btnHarvest.setBackground(Color.decode("#E6E5A3"));
+            //btnHarvest.setBackground(Color.decode("#E6E5A3"));
             btnHarvest.setForeground(Color.black);
             btnHarvest.setUI(new StyledButtonUI());
             panelEastSOUTH.add(btnHarvest);
