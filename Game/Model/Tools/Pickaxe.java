@@ -26,11 +26,12 @@ public class Pickaxe extends Tool{
         boolean retVal;
             if (tile.isRock()) { //checks if there is a rock
                 tile.setRock(false);
+                tile.setOccupied(false);
                 retVal = true;
             }
             else {
                 retVal = false;
-                System.out.println("Warning: Cannot use Pickaxe - rock is not present");
+                System.out.println("Warning: Cannot use Pickaxe. Rock is not present");
             }
 
         return retVal;

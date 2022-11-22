@@ -25,14 +25,14 @@ public class WaterCan extends Tool{
     @Override
     public boolean useTool(Tile tile) {
         boolean retVal;
-            if (tile.getPlantedSeed() != null && tile.isPlowed() && !tile.getPlantedSeed().isWithered() && !tile.isRock() //checks if the seed exists and tile is plowed
-            ){
+            if (tile.getPlantedSeed() != null && tile.isPlowed() && !tile.getPlantedSeed().isWithered() && !tile.isRock()) //checks if the seed exists and tile is plowed
+            {
                 tile.getPlantedSeed().getWater().addWater(); //adds the water to the seed object
                 retVal = true;
             }
             else {
                 retVal = false;
-                System.out.println("Warning: Plant not found. Please plant a seed first.");
+                System.out.println("Warning: Plant not found.");
             }
 
 

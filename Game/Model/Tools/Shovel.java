@@ -32,7 +32,7 @@ public class Shovel extends Tool{
                 tile.removePlantedSeed();
                 tile.setPlowed(false);
                 tile.setOccupied(false);
-                System.out.println("GameChange: Plant has been removed");
+                System.out.println("Note: Plant has been removed");
             }
         return retVal;
     }

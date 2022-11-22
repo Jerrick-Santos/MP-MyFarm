@@ -30,7 +30,7 @@ public class PlowTool extends Tool{
             }
             else {
                 retVal = false;
-                System.out.println("Warning: Cannot use Plow Tool");
+                System.out.println("Warning: Cannot use Plow Tool. Please check if tile has been plowed or occupied");
             }
 
         return retVal;

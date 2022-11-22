@@ -107,6 +107,9 @@ public class Driver {
                     }
 
                 }
+                case 8 -> {
+                    player.restartGame();
+                }
             }
         }
     }
@@ -123,6 +126,7 @@ public class Driver {
         System.out.println("[5] Check Player Status");
         System.out.println("[6] Update Farmer Type");
         System.out.println("[7] Admin Controls");
+        System.out.println("[8] Restart Game");
 
         System.out.print("Enter an Action: ");
     }

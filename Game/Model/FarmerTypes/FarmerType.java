@@ -7,7 +7,7 @@ package Game.Model.FarmerTypes;
  * player benefits such as cost reduction for seeds, water and fertilizer maximum
  * requirement increase, and bonus earnings.
  */
-public class FarmerType {
+public abstract class FarmerType {
     private String farmerTypeName;
     private int levelRequirement;
     private int bonusEarns;

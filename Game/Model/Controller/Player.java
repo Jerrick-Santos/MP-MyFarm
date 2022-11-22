@@ -77,6 +77,22 @@ public class Player {
 
     }
 
+    public void restartGame(){
+        this.level = 0;
+        this.passedDays = 0;
+        this.farmerTypeIndex = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                land[i][j] = new Tile();
+            }
+        }
+        this.gameStats = new GameStats();
+        this.selectedTool = -1;
+        File rockMap = new File("Game\\Model\\Controller\\RockMapping.txt");
+
+        mapRocksInitialization(rockMap);
+    }
+
     /**
      * checks if certain requirements has been met to end the game. I.e., checking the balance and withered seed(s)
      * @return true if game has ended, otherwise return false
@@ -257,16 +273,10 @@ public class Player {
                 this.gameStats.deductWallet(this.land[row][col].getPlantedSeed().getSeedCost() - farmerTypeList.get(farmerTypeIndex).getCostReduction());
                 System.out.println("Note: Apple Planted");
                 retVal = true;
-            } else{
-                System.out.println("Warning: Insufficient OBJCs to buy chosen seed!");
             }
         }
-        else if (this.land[row][col].isPlowed() && this.land[row][col].isOccupied()
-                && this.land[row][col].getPlantedSeed() != null){
-            System.out.println("Warning: cannot be planted! - Tile still has a plant");
-        }
         else {
-            System.out.println("Warning: cannot be planted! - Tile is not plowed");
+            System.out.println("Warning: cannot be planted! Check OBJCs wallet if sufficient or if tile is occupied");
         }
 
         return retVal;
@@ -293,17 +303,8 @@ public class Player {
             this.land[row][col].setPlowed(false);
             retVal = true;
         }
-        else if (this.land[row][col].getPlantedSeed() != null && this.land[row][col].isPlowed()
-            && this.land[row][col].getPlantedSeed().isWithered()){
-            System.out.println("Warning: Plant is withered! Use the shovel!");
-        }
-        else if (this.land[row][col].getPlantedSeed() != null && this.land[row][col].isPlowed()
-                && !this.land[row][col].getPlantedSeed().isWithered()
-                && this.land[row][col].getPlantedSeed().getHarvestDayRequired() != this.land[row][col].getPlantedSeed().getDaysPassed()){
-            System.out.println("Warning: Harvest Day Required not met.");
-        }
         else {
-            System.out.println("Warning: Plant does not exist. Please plant a seed");
+            System.out.println("Warning: Cannot harvest Seed. Check if seed exists or had withered");
         }
         return retVal;
     }
@@ -349,7 +350,7 @@ public class Player {
                 }
             }
             else {
-                System.out.println("Cannot use tool: Conditions are not met");
+                System.out.println("Cannot use tool: Check tile conditions and cost usage of tool");
             }
         }
         else {
