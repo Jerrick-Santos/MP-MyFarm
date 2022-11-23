@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/GameStats.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/RockMapping.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Tile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/FarmerTypes/DistinguishedFarmer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/FarmerTypes/Farmer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/FarmerTypes/FarmerType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/FarmerTypes/LegendaryFarmer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/FarmerTypes/RegisteredFarmer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Apple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Carrot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Fertilizer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Mango.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Potato.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Rose.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Seed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Sunflower.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Tulips.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Turnip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Water.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/FertilizerTool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Pickaxe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/PlowTool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Shovel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Tool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/WaterCan.class" afterDir="false" />
+    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Edited Error Messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/RockMapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/RockMapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/FarmerTypes/FarmerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/FarmerTypes/FarmerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/RockMapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/RockMapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/FertilizerTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/FertilizerTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Pickaxe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Pickaxe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/PlowTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/PlowTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Shovel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Shovel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/WaterCan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/WaterCan.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +39,29 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Edited Error Messages">
+      <created>1669136479056</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669136479056</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Edited Error Messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Error Messages" />
   </component>
 </project>

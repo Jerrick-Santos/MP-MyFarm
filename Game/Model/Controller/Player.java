@@ -114,7 +114,7 @@ public class Player {
             }
         }
 
-        if ((!checkForActiveSeeds && this.gameStats.getBalance() < 3) || tilesWithWitheredSeed == 50){
+        if ((!checkForActiveSeeds && this.gameStats.getBalance() < 3 - this.farmerTypeList.get(farmerTypeIndex).getCostReduction()) || tilesWithWitheredSeed == 50){
             retVal = true;
         }
 
@@ -157,13 +157,15 @@ public class Player {
         boolean retVal = false;
 
         if ((row != 0 && row != 9) && (col != 0 && col != 4)){ //Checks if the coordinaters are planted in the edges
+
             if (!land[row - 1][col - 1].isOccupied() && !land[row - 1][col].isOccupied() && !land[row - 1][col + 1].isOccupied()
             && !land[row][col - 1].isOccupied() && !land[row][col + 1].isOccupied()
             && !land[row + 1][col - 1].isOccupied() && !land[row + 1][col].isOccupied() && !land[row + 1][col + 1].isOccupied()){
                 retVal = true;
             }
-
-            System.out.println("Warning: Cannot plant. Surrounding Tiles are Occupied");
+            else {
+                System.out.println("Warning: Cannot plant. Surrounding Tiles are Occupied");
+            }
         }
         else {
             System.out.println("Warning: Cant Plant on Sides");
@@ -274,9 +276,13 @@ public class Player {
                 System.out.println("Note: Apple Planted");
                 retVal = true;
             }
+            else
+            {
+                System.out.println("Warning: cannot be planted! Check OBJCs wallet if sufficient or if tile is occupied/withered");
+            }
         }
         else {
-            System.out.println("Warning: cannot be planted! Check OBJCs wallet if sufficient or if tile is occupied");
+            System.out.println("Warning: cannot be planted! Check OBJCs wallet if sufficient or if tile is occupied/withered");
         }
 
         return retVal;
