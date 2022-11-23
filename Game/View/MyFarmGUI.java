@@ -12,7 +12,7 @@ public class MyFarmGUI extends JFrame{
         super("MP-MyFarm");
         setLayout(new BorderLayout());
 
-        setSize(850, 500);
+        setSize(1300, 500);
         setLocation(100,100);
 
         init();
@@ -86,12 +86,12 @@ public class MyFarmGUI extends JFrame{
         objcoinsVal.setFont(new Font("Arial", Font.BOLD, 14));
         JLabel space2 = new JLabel("  |   ");
         space2.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel expLbl = new JLabel("Experience: ");
+        JLabel expLbl = new JLabel("Exp: ");
         expLbl.setFont(new Font("Arial", Font.BOLD, 14));
         JLabel expVal = new JLabel("5");
         expVal.setFont(new Font("Arial", Font.BOLD, 14));
 
-        JLabel spacee = new JLabel("                                                                                          ");
+        JLabel spacee = new JLabel("                                                                                                                                                                                                                       ");
 
         JButton updateFT = new JButton("Prestige Up");
         updateFT.setBackground(Color.GREEN);
@@ -136,39 +136,121 @@ public class MyFarmGUI extends JFrame{
             panelEastCENTER.setLayout(new BorderLayout());
             panelEastCENTER.setBackground(Color.decode("#A9AF7E"));
 
-                //South Panel of CENTER
-                RoundedPanel panelEastCenterSOUTH = new RoundedPanel();
-                panelEastCenterSOUTH.setLayout(new FlowLayout(FlowLayout.CENTER));
-                panelEastCenterSOUTH.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
-                panelEastCenterSOUTH.setBackground(Color.decode("#E6E5A3"));
+                RoundedPanel status = new RoundedPanel();
+                status.setLayout(new GridLayout(6, 2));
+                status.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
+                status.setBackground(Color.decode("#E6E5A3"));
 
-                JLabel plantLbl = new JLabel("Turnip");
-                plantLbl.setFont(new Font("Arial", Font.BOLD, 14));
-                plantLbl.setForeground(Color.black);
-                panelEastCenterSOUTH.add(plantLbl);
+                JLabel cM = new JLabel("                         Crop Maturity (in days): ");
+                cM.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(cM);
+                JLabel cropMaturity = new JLabel("0");
+                cropMaturity.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(cropMaturity);
+                JLabel hD = new JLabel("                                            Harvest Day: ");
+                hD.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(hD);
+                JLabel harvestDay = new JLabel("2");
+                harvestDay.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(harvestDay);
+                JLabel mWR = new JLabel("                Minimum Water Requirement: ");
+                mWR.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(mWR);
+                JLabel minimumWaterReq = new JLabel("1");
+                minimumWaterReq.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(minimumWaterReq);
+                JLabel tCW = new JLabel("                              Times Crop Watered: ");
+                tCW.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(tCW);
+                JLabel timesCropWatered = new JLabel("0");
+                timesCropWatered.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(timesCropWatered);
+                JLabel mFR = new JLabel("          Minimum Fertilizer Requirement: ");
+                mFR.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(mFR);
+                JLabel minimumFertilizerReq = new JLabel("0");
+                minimumFertilizerReq.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(minimumFertilizerReq);
+                JLabel tCF = new JLabel("                            Times Crop Fertilized: ");
+                tCF.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(tCF);
+                JLabel timesCropFertilized = new JLabel("0");
+                timesCropFertilized.setFont(new Font("Arial", Font.BOLD, 14));
+                status.add(timesCropFertilized);
 
-                panelEastCENTER.add(panelEastCenterSOUTH, BorderLayout.SOUTH);
-            /*
-            JTextArea textDesc = new JTextArea(
-                    """
-                            
-                            Tile info: \n
-                            Rock Presence: false
-                            Plowed: false
-                            Occupied: false
-                            ================
-                            
-                            Planted Seed: None
-                            
-                            """
-            );
-            textDesc.setFont(new Font("Serif", Font.ITALIC, 16));
-            textDesc.setLineWrap(true);
-            textDesc.setWrapStyleWord(true);
-            textDesc.setEditable(false);
-            textDesc.setBackground(Color.decode("#A9AF7E"));
-            panelEastCENTER.add(textDesc);
-            */
+                panelEastCENTER.add(status, BorderLayout.CENTER);
+                panelEast.add(panelEastCENTER, BorderLayout.CENTER);
+
+
+        //South Panel of CENTER
+                JPanel panelEastCenterSOUTH = new JPanel();
+                panelEastCenterSOUTH.setLayout(new BorderLayout());
+                //panelEastCenterSOUTH.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
+                panelEastCenterSOUTH.setBackground(Color.decode("#A9AF7E"));
+
+                    RoundedPanel textTitle = new RoundedPanel();
+                    textTitle.setBackground(Color.decode("#E6E5A3"));
+                    textTitle.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
+                    textTitle.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+                    JLabel plantLbl = new JLabel("Turnip");
+                    plantLbl.setFont(new Font("Arial", Font.BOLD, 14));
+                    plantLbl.setForeground(Color.black);
+                    textTitle.add(plantLbl);
+                    panelEastCenterSOUTH.add(textTitle, BorderLayout.NORTH);
+
+                    RoundedPanel textDesc = new RoundedPanel();
+                    textDesc.setBackground(Color.decode("#E6E5A3"));
+                    textDesc.setBorder(BorderFactory.createEmptyBorder(8, 3, 8, 3));
+                    textDesc.setLayout(new GridLayout(2, 4));
+
+                    JLabel rockLbl = new JLabel("   Rock");
+                    rockLbl.setFont(new Font("Arial", Font.BOLD, 14));
+                    //rockLbl.setBorder(BorderFactory.createEmptyBorder(6, 6, 8, 8));
+                    rockLbl.setBackground(Color.gray);
+                    rockLbl.setForeground(Color.black);
+                    textDesc.add(rockLbl);
+
+                    JLabel plowed = new JLabel("Plowed");
+                    plowed.setFont(new Font("Arial", Font.BOLD, 14));
+                    //plowed.setBorder(BorderFactory.createEmptyBorder(6, 6, 8, 8));
+                    plowed.setBackground(Color.gray);
+                    plowed.setForeground(Color.black);
+                    textDesc.add(plowed);
+
+                    JLabel seed = new JLabel("Seed");
+                    seed.setFont(new Font("Arial", Font.BOLD, 14));
+                    //seed.setBorder(BorderFactory.createEmptyBorder(6, 6, 8, 8));
+                    seed.setBackground(Color.gray);
+                    seed.setForeground(Color.black);
+                    textDesc.add(seed);
+
+                    JLabel withered = new JLabel("Withered");
+                    withered.setFont(new Font("Arial", Font.BOLD, 14));
+                    //withered.setBorder(BorderFactory.createEmptyBorder(6, 6, 8, 8));
+                    withered.setBackground(Color.gray);
+                    withered.setForeground(Color.black);
+                    textDesc.add(withered);
+
+                    Icon RockIcon = new ImageIcon(getClass().getResource("icons8-cancel-32.png"));
+                    JLabel forRock = new JLabel(RockIcon);
+                    textDesc.add(forRock);
+
+                    Icon PlowIcon = new ImageIcon(getClass().getResource("icons8-cancel-32.png"));
+                    JLabel forPlow = new JLabel(PlowIcon);
+                    textDesc.add(forPlow);
+
+                    Icon SeedIcon = new ImageIcon(getClass().getResource("icons8-cancel-32.png"));
+                    JLabel forSeed = new JLabel(SeedIcon);
+                    textDesc.add(forSeed);
+
+                    Icon WitherIcon = new ImageIcon(getClass().getResource("icons8-cancel-32.png"));
+                    JLabel forWither = new JLabel(WitherIcon);
+                    textDesc.add(forWither);
+
+                    panelEastCenterSOUTH.add(textDesc, BorderLayout.SOUTH);
+
+                    panelEastCENTER.add(panelEastCenterSOUTH, BorderLayout.SOUTH);
 
             panelEast.add(panelEastCENTER, BorderLayout.CENTER);
 
@@ -198,6 +280,13 @@ public class MyFarmGUI extends JFrame{
             btnHarvest.setForeground(Color.black);
             btnHarvest.setUI(new StyledButtonUI());
             panelEastSOUTH.add(btnHarvest);
+
+            JButton btnNextDay = new JButton("Next Day");
+            btnNextDay.setFont(new Font("Arial", Font.BOLD, 14));
+            //btnHarvest.setBackground(Color.decode("#E6E5A3"));
+            btnNextDay.setForeground(Color.black);
+            btnNextDay.setUI(new StyledButtonUI());
+            panelEastSOUTH.add(btnNextDay);
 
             panelEast.add(panelEastSOUTH, BorderLayout.SOUTH);
 
