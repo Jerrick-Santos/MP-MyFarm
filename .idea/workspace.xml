@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Updated GUI -- added 'Update FarmerType' button.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Updated GUI -- updated East Panel.">
+      <change afterPath="$PROJECT_DIR$/Game/View/icons8-cancel-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/View/icons8-done-32.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669114791053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated GUI -- updated East Panel.">
+      <created>1669222479057</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669222479057</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,7 +135,8 @@
     <MESSAGE value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
     <MESSAGE value="Updated GUI" />
     <MESSAGE value="Updated GUI -- added 'Update FarmerType' button." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated GUI -- added 'Update FarmerType' button." />
+    <MESSAGE value="Updated GUI -- updated East Panel." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated GUI -- updated East Panel." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
