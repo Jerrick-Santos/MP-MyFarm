@@ -1,34 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Edited Error Messages">
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/FarmerType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/icons8-cancel-32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/icons8-done-32.png" afterDir="false" />
+    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Updated GUI -- updated East Panel.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/FarmerType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Apple.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Carrot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Fertilizer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Mango.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Potato.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Water.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Tool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/FarmerType.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +13,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="FullFeatures" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">

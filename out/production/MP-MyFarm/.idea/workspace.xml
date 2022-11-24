@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Edited Error Messages">
+    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Updated GUI -- updated East Panel.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Apple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Apple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Carrot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Carrot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Fertilizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Fertilizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Mango.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Mango.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Potato.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Potato.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Rose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Rose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Seed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Seed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Sunflower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Sunflower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Tulips.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Tulips.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Turnip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Turnip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Seeds/Water.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/FertilizerTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/FertilizerTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Pickaxe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Pickaxe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/PlowTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/PlowTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Shovel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Shovel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Tool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/Tool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/WaterCan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Tools/WaterCan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/FarmerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Apple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Carrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Fertilizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Mango.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Potato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Water.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Tool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,20 +33,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="FullFeatures" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HxVuLQT3yuH3uhEMmKOgWqJc4q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.DriverView">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game.Driver" />
       <module name="MP-MyFarm" />
@@ -56,8 +68,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DriverView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game.View.DriverView" />
+      <module name="MP-MyFarm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DriverView" />
         <item itemvalue="Application.Driver" />
       </list>
     </recent_temporary>

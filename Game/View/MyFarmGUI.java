@@ -38,7 +38,6 @@ public class MyFarmGUI extends JFrame{
         panelSouth.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         JButton [][]toolButtons = new JButton[1][5];
 
-
         JLabel toolFrame = new JLabel();
 
         for (int k = 0; k < 1; k++) {
@@ -74,24 +73,32 @@ public class MyFarmGUI extends JFrame{
         panelNorth.setBackground(Color.decode("#E6E5A3"));
         panelNorth.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
 
-        JLabel levelLbl = new JLabel("Level: ");
+        JLabel bracket1 = new JLabel(" [");
+        bracket1.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel farmerTypeStat = new JLabel("LEGENDARY");
+        farmerTypeStat.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel bracket2 = new JLabel("]     ");
+        bracket2.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel levelLbl = new JLabel("Level[");
         levelLbl.setFont(new Font("Arial", Font.BOLD, 14));
         JLabel levelVal = new JLabel("1");
         levelVal.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel space = new JLabel("  |   ");
+        JLabel space = new JLabel("]      ");
         space.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel objcoinsLbl = new JLabel("OBJCoins: ");
+        JLabel objcoinsLbl = new JLabel("ObjCoins[");
         objcoinsLbl.setFont(new Font("Arial", Font.BOLD, 14));
         JLabel objcoinsVal = new JLabel("100");
         objcoinsVal.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel space2 = new JLabel("  |   ");
+        JLabel space2 = new JLabel("]      ");
         space2.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel expLbl = new JLabel("Exp: ");
+        JLabel expLbl = new JLabel("Exp[");
         expLbl.setFont(new Font("Arial", Font.BOLD, 14));
         JLabel expVal = new JLabel("5");
         expVal.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel bracket3 = new JLabel("]");
+        bracket3.setFont(new Font("Arial", Font.BOLD, 14));
 
-        JLabel spacee = new JLabel("                                                                                                                                                                                                                       ");
+        JLabel spacee = new JLabel("                                                                                                                                                                                   ");
 
         JButton updateFT = new JButton("Prestige Up");
         updateFT.setBackground(Color.GREEN);
@@ -99,6 +106,9 @@ public class MyFarmGUI extends JFrame{
         updateFT.setFont(new Font("Arial", Font.BOLD, 14));
         updateFT.setUI(new StyledButtonUI());
 
+        panelNorth.add(bracket1);
+        panelNorth.add(farmerTypeStat);
+        panelNorth.add(bracket2);
         panelNorth.add(levelLbl);
         panelNorth.add(levelVal);
         panelNorth.add(space);
@@ -107,6 +117,7 @@ public class MyFarmGUI extends JFrame{
         panelNorth.add(space2);
         panelNorth.add(expLbl);
         panelNorth.add(expVal);
+        panelNorth.add(bracket3);
         panelNorth.add(spacee);
         panelNorth.add(updateFT);
 
