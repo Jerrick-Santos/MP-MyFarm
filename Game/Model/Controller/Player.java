@@ -15,7 +15,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Player {
-    private String name;
     private int level;
     private int passedDays;
     private ArrayList<FarmerType> farmerTypeList;
@@ -28,15 +27,13 @@ public class Player {
 
     /**
      * This constructor creates the game itself. Creates the required classes needed for the game to run.
-     * @param name - the name of the player
      * @param tool1 - Water can
      * @param tool2 - Fertilizer
      * @param tool3 - Plow Tool
      * @param tool4 - Pickaxe
      * @param tool5 - Shovel
      */
-    public Player(String name, Tool tool1, Tool tool2, Tool tool3, Tool tool4, Tool tool5){
-        this.name = name;
+    public Player(Tool tool1, Tool tool2, Tool tool3, Tool tool4, Tool tool5){
         this.level = 0;
         this.passedDays = 0;
         this.farmerTypeList = new ArrayList<>(Arrays.asList(
@@ -114,7 +111,7 @@ public class Player {
             }
         }
 
-        if ((!checkForActiveSeeds && this.gameStats.getBalance() < 3 - this.farmerTypeList.get(farmerTypeIndex).getCostReduction()) || tilesWithWitheredSeed == 50){
+        if ((!checkForActiveSeeds && this.gameStats.getBalance() < 5 - this.farmerTypeList.get(farmerTypeIndex).getCostReduction()) || tilesWithWitheredSeed == 50){
             retVal = true;
         }
 
@@ -493,10 +490,6 @@ public class Player {
         return gameStats;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getLevel() {
         return level;
     }
@@ -518,5 +511,23 @@ public class Player {
     public void adminControl(double addWallet, double addExp){
         this.gameStats.addWallet(addWallet);
         this.gameStats.gainExp(addExp);
+    }
+
+    public void endGameNow(){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                this.land[i][j].setRock(false);
+                this.land[i][j].setOccupied(false);
+                this.land[i][j].setPlowed(true);
+                this.land[i][j].setPlantedSeed(2,"Potato", "Root Crop", 5,
+                        3,4,
+                        1,2,
+                        20,
+                        1,10,
+                        3,12.5, this.farmerTypeList.get(farmerTypeIndex));
+                this.land[i][j].getPlantedSeed().setWithered(true);
+
+            }
+        }
     }
 }

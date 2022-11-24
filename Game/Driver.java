@@ -14,12 +14,9 @@ public class Driver {
         Tool Shovel = new Shovel("Shovel", 7, 2);
 
 
-        String name;
-        System.out.print("Enter Your Name: ");
         Scanner scanner = new Scanner(System.in);
-        name = scanner.nextLine();
 
-        Player player = new Player(name, WaterCan, FertilizerTool, PlowTool, Pickaxe, Shovel);
+        Player player = new Player(WaterCan, FertilizerTool, PlowTool, Pickaxe, Shovel);
 
 
         while (!player.endGame()){
@@ -110,6 +107,9 @@ public class Driver {
                 case 8 -> {
                     player.restartGame();
                 }
+                case 9 -> {
+                    player.endGameNow();
+                }
             }
         }
     }
@@ -127,6 +127,7 @@ public class Driver {
         System.out.println("[6] Update Farmer Type");
         System.out.println("[7] Admin Controls");
         System.out.println("[8] Restart Game");
+        System.out.println("[9] End Game");
 
         System.out.print("Enter an Action: ");
     }
@@ -134,7 +135,6 @@ public class Driver {
     public static void displayPlayerStatus(Player p, int row, int col){
         System.out.println();
         System.out.println("====================================================");
-        System.out.println("Player Name: " + p.getName());
         System.out.println("Level: " + p.getLevel());
         System.out.println("OBJC Wallet: " + p.getGameStats().getBalance());
         System.out.println("Experience (ExP): " + p.getGameStats().getExp());
