@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="Updated GUI -- updated East Panel.">
-      <change afterPath="$PROJECT_DIR$/Game/View/icons8-cancel-32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/View/icons8-done-32.png" afterDir="false" />
+    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Edited Error Messages">
+      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/FarmerType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/icons8-cancel-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/icons8-done-32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Driver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/FarmerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Apple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Carrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Fertilizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Mango.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Potato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Rose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Seed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Sunflower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Tulips.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Turnip.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Seeds/Water.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/FertilizerTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Pickaxe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/PlowTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Shovel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/Tool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Tools/WaterCan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,7 +41,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2H5ARcj1ISGTjuB7nXHil5OyXEv" />
+  <component name="ProjectId" id="2HxVuLQT3yuH3uhEMmKOgWqJc4q" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,11 +49,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.DriverView">
@@ -44,7 +58,7 @@
       <module name="MP-MyFarm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Game.Model.Controller.*" />
+          <option name="PATTERN" value="Game.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,49 +88,21 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="cd627761-53d6-4c57-9341-92911b0e6e79" name="Changes" comment="" />
-      <created>1667564566404</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1667564566404</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor">
-      <created>1667629401784</created>
+    <task id="LOCAL-00001" summary="Edited Error Messages">
+      <created>1669136479056</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1667629401784</updated>
+      <updated>1669136479056</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added other plant types and implemented features for flower harvest and Fruit Tree planting">
-      <created>1668045929949</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1668045929949</updated>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Edited Error Messages" />
+      <created>1669226945205</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669226945205</updated>
     </task>
-    <task id="LOCAL-00003" summary="Updated GUI">
-      <created>1669053823604</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1669053823605</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Updated GUI -- added 'Update FarmerType' button.">
-      <created>1669114791053</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669114791053</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Updated GUI -- updated East Panel.">
-      <created>1669222479057</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669222479057</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,12 +117,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit - Reverted Lands into a 2D array and also added farmerType as parameter in Water.java and Fertilizer.java constructor" />
-    <MESSAGE value="Added other plant types and implemented features for flower harvest and Fruit Tree planting" />
-    <MESSAGE value="Updated GUI" />
-    <MESSAGE value="Updated GUI -- added 'Update FarmerType' button." />
-    <MESSAGE value="Updated GUI -- updated East Panel." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated GUI -- updated East Panel." />
+    <MESSAGE value="Edited Error Messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Error Messages" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
