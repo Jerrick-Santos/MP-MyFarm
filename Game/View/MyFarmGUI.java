@@ -349,4 +349,105 @@ public class MyFarmGUI extends JFrame{
         }
         return panelSouth;
     }
+
+    //NORTH PANEL SETTERS
+    public void setFarmerTypeName(String farmerTypeName){
+        this.farmerTypeStat.setText(farmerTypeName);
+    }
+
+    public void setFarmerLevel(int level){
+        String levelString = Integer.toString(level);
+        this.levelVal.setText(levelString);
+    }
+
+    public void setFarmerBalance(double balance){
+        String balanceString = Double.toString(balance);
+        this.objcoinsVal.setText(balanceString);
+    }
+
+    public void setFarmerExpVal(double exp){
+        String expString = Double.toString(exp);
+        this.expVal.setText(expString);
+    }
+
+    //PANEL EAST NORTH
+    public void setPlantCoordinate(String coordinate){
+        this.lblText.setText(coordinate);
+    }
+
+    //PANEL EAST CENTER
+
+    public void setCropM(int cropM) {
+        this.cropM = cropM;
+    }
+
+    public void setHarvestD(int harvestD) {
+        this.harvestD = harvestD;
+    }
+
+    public void setMinWR(int minWR) {
+        this.minWR = minWR;
+    }
+
+    public void setTimesCW(int timesCW) {
+        this.timesCW = timesCW;
+    }
+
+    public void setMinFR(int minFR) {
+        this.minFR = minFR;
+    }
+
+    public void setTimesCF(int timesCF) {
+        this.timesCF = timesCF;
+    }
+
+    public void removeAllTileInfo(){
+        cropMaturity.setText("");
+        harvestDay.setText("");
+        minimumWaterReq.setText("");
+        timesCropWatered.setText("");
+        minimumFertilizerReq.setText("");
+        timesCropFertilized.setText("");
+    }
+
+    public void revertTileInfo(){
+        cropMaturity.setText("........................................" + cropM);
+        harvestDay.setText("........................................" + harvestD);
+        minimumWaterReq.setText("........................................" + minWR);
+        timesCropWatered.setText("........................................" + timesCW);
+        minimumFertilizerReq.setText("........................................" + minFR);
+        timesCropFertilized.setText("........................................" + timesCF);
+    }
+
+    //EAST SOUTH
+    public void setPlantLabel(String plantLabel){
+        this.plantLbl.setText(plantLabel);
+    }
+
+    //EAST CENTER SOUTH
+    public void setRockIcon(Icon icon){
+        forRock.setIcon(icon);
+    }
+
+    public void setPlowIcon(Icon icon){
+        forPlow.setIcon(icon);
+    }
+
+    public void setSeedIcon(Icon icon){
+        forSeed.setIcon(icon);
+    }
+
+    public void setWitherIcon(Icon icon){
+        forWither.setIcon(icon);
+    }
+
+    //EAST SOUTH
+
+    public void setPlantButtonColor(Color color){
+
+    }
+
+    public void setHarvestButtonColor(Color color){
+
+    }
 }
