@@ -15,7 +15,9 @@ public class MyFarmGUI extends JFrame{
     private JButton updateFT;
     // East Panel
     private JLabel lblText;
-    private JLabel cropMaturity, harvestDay, minimumWaterReq, timesCropWatered, minimumFertilizerReq, timesCropFertilized;
+    private JLabel cropMaturity, harvestDay, minimumWaterReq, timesCropWatered, minimumFertilizerReq,
+                   timesCropFertilized;
+    private int cropM = 0, harvestD = 0, minWR = 0, timesCW = 0, minFR = 0, timesCF = 0;
     private JButton btnUse, btnPlant, btnHarvest, btnNextDay;
     private JLabel plantLbl;
     private JLabel forRock, forPlow, forSeed, forWither;
@@ -58,7 +60,7 @@ public class MyFarmGUI extends JFrame{
         RoundedPanel panelNorth = new RoundedPanel();
                      panelNorth.setLayout(new FlowLayout(5));
                      panelNorth.setBackground(Color.decode("#E6E5A3"));
-                     panelNorth.setBorder(BorderFactory.createEmptyBorder(3,3,3,3));
+                     panelNorth.setBorder(BorderFactory.createEmptyBorder(3,3,0,3));
 
         JLabel bracket1 = new JLabel(" [");
                bracket1.setFont(new Font("Arial", Font.BOLD, 14));
@@ -147,40 +149,40 @@ public class MyFarmGUI extends JFrame{
                      status.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
                      status.setBackground(Color.decode("#E6E5A3"));
 
-        JLabel cM = new JLabel("                Crop Maturity (in days): ");
+        JLabel cM = new JLabel("    Crop Maturity (in days):     ");
                cM.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(cM);
-        cropMaturity = new JLabel("0");
+        cropMaturity = new JLabel("........................................" + cropM);
         cropMaturity.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(cropMaturity);
         JLabel hD = new JLabel("                     Harvest Day: ");
                hD.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(hD);
-        harvestDay = new JLabel("2");
+        harvestDay = new JLabel("........................................" + harvestD);
         harvestDay.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(harvestDay);
-        JLabel mWR = new JLabel("  Minimum Water Requirement: ");
+        JLabel mWR = new JLabel("  Minimum Water Req: ");
                mWR.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(mWR);
-        minimumWaterReq = new JLabel("1");
+        minimumWaterReq = new JLabel("........................................" + minWR);
         minimumWaterReq.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(minimumWaterReq);
         JLabel tCW = new JLabel("       Times Crop Watered: ");
                tCW.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(tCW);
-        timesCropWatered = new JLabel("0");
+        timesCropWatered = new JLabel("........................................" + timesCW);
         timesCropWatered.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(timesCropWatered);
-        JLabel mFR = new JLabel("Minimum Fertilizer Requirement: ");
+        JLabel mFR = new JLabel("  Minimum Fertilizer Req: ");
                mFR.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(mFR);
-        minimumFertilizerReq = new JLabel("0");
+        minimumFertilizerReq = new JLabel("........................................" + minFR);
         minimumFertilizerReq.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(minimumFertilizerReq);
         JLabel tCF = new JLabel("     Times Crop Fertilized: ");
                tCF.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(tCF);
-        timesCropFertilized = new JLabel("0");
+        timesCropFertilized = new JLabel("........................................" + timesCF);
         timesCropFertilized.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(timesCropFertilized);
 
