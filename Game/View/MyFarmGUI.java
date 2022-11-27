@@ -30,6 +30,7 @@ public class MyFarmGUI extends JFrame{
         setLayout(new BorderLayout());
         setSize(800,500);
         setLocation(100,100);
+        setAlwaysOnTop(true);
 
         mainContainer(NORTHPanel(),
                 EASTPanel(panelEastNORTH(), panelEastCENTER(panelEastCenterSOUTH()),
@@ -293,7 +294,7 @@ public class MyFarmGUI extends JFrame{
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {
-                String text = Integer.toString(i) + ", " + Integer.toString(j);
+                String text = Integer.toString(i) + "," + Integer.toString(j);
                 plantButtons[i][j] = new JButton(text);
                 plantButtons[i][j].setFont(new Font("Arial", Font.BOLD, 14));
                 plantButtons[i][j].setBackground(Color.decode("#E6E5A3"));
@@ -306,8 +307,8 @@ public class MyFarmGUI extends JFrame{
                             String[] arrStr = text.split(",",2);
                             int x = Integer.parseInt(arrStr[0]);
                             int y = Integer.parseInt(arrStr[1]);
-                            JOptionPane.showMessageDialog(null, text);
-                            textFrame.setText(text);
+                            System.out.println(displaySeedOptions());
+                            lblText.setText(text);
                         }
                     }
                 });
@@ -444,10 +445,51 @@ public class MyFarmGUI extends JFrame{
     //EAST SOUTH
 
     public void setPlantButtonColor(Color color){
-
+        btnPlant.setBackground(Color.decode("#EBE29F"));
     }
 
     public void setHarvestButtonColor(Color color){
-
+        btnHarvest.setBackground(Color.decode("#EBE29F"));
     }
+
+    //CENTER PANEL
+    public void readyForHarvest(int row, int col){
+        plantButtons[row][col].setBackground(Color.green);
+    }
+
+    public void tileIsOccupied(int row, int col){
+        plantButtons[row][col].setBackground(Color.yellow);
+    }
+
+    public void plantWithered(int row, int col){
+        plantButtons[row][col].setBackground(Color.red);
+    }
+
+    //SOUTH PANEL
+    public void changeToolButtonColor(int select, Color defaultColor, int currentTool, Color newColor){
+        toolButtons[currentTool].setBackground(defaultColor);
+        toolButtons[select].setBackground(newColor);
+    }
+
+    public int displaySeedOptions(){
+        int retVal = -1;
+        //i solved my problem adding the following 2 lines of code...
+        Object[] options = {"Turnip", "Carrot", "Potato", "Rose", "Tulips", "Sunflower", "Mango", "Apple"};
+        JFrame panel = new JFrame();
+        panel.add(new JButton("Click"));
+        panel.add(new JTextField(20));
+        panel.add(new JLabel("Label"));
+        //...and passing `frame` instead of `null` as first parameter
+        Object selectionObject = JOptionPane.showInputDialog(this, "Choose", "Menu", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+        String selectionString = selectionObject.toString();
+
+        for (int i = 0; i < options.length; i++) {
+            if (selectionString.equals(options[i])){
+                retVal = i;
+            }
+        }
+
+        return retVal;
+    }
+
 }

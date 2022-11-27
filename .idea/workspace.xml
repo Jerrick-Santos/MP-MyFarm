@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="">
+    <list default="true" id="b549ac52-73fe-4df0-ad7d-942fa169eb47" name="Changes" comment="Added Initial setters for GUI attributes">
+      <change afterPath="$PROJECT_DIR$/Game/View/SeedRatesInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -104,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669479759068</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Initial setters for GUI attributes">
+      <created>1669484940074</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669484940075</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,7 +137,8 @@
     <MESSAGE value="Updated GUI -- revised north panel" />
     <MESSAGE value="Revised and Organized GUI code -- decoupled classes for each panels" />
     <MESSAGE value="Code spacing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code spacing" />
+    <MESSAGE value="Added Initial setters for GUI attributes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Initial setters for GUI attributes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
