@@ -87,9 +87,7 @@ public class MyFarmGUI extends JFrame{
         expVal.setFont(new Font("Arial", Font.BOLD, 14));
         JLabel bracket3 = new JLabel("]");
                bracket3.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel spacee = new JLabel("                                                                      " +
-                "                                                                      " +
-                "                                       ");
+        JLabel spacee = new JLabel("                                                       ");
         updateFT = new JButton("Prestige Up");
         updateFT.setBackground(Color.GREEN);
         updateFT.setForeground(Color.BLACK);
@@ -457,6 +455,9 @@ public class MyFarmGUI extends JFrame{
         plantButtons[row][col].setBackground(Color.green);
     }
 
+    public void rockOccupied(int row, int col){
+        plantButtons[row][col].setBackground(Color.orange);
+    }
     public void tileIsOccupied(int row, int col){
         plantButtons[row][col].setBackground(Color.yellow);
     }
