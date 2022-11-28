@@ -50,7 +50,7 @@ public class Player {
             }
         }
         this.toolSetList = new ArrayList<>(Arrays.asList(tool1, tool2, tool3, tool4, tool5)); //takes input from pre-constructed tool variables in main
-        this.selectedTool = -1;
+        this.selectedTool = 0;
 
         File rockMap = new File("Game\\Model\\Controller\\RockMapping.txt");
 

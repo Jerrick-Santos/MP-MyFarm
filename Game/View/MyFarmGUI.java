@@ -297,19 +297,6 @@ public class MyFarmGUI extends JFrame{
                 plantButtons[i][j].setFont(new Font("Arial", Font.BOLD, 14));
                 plantButtons[i][j].setBackground(Color.decode("#E6E5A3"));
                 plantButtons[i][j].setForeground(Color.black);
-                plantButtons[i][j].addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (e.getSource() instanceof JButton) {
-                            String text = ((JButton) e.getSource()).getText();
-                            String[] arrStr = text.split(",",2);
-                            int x = Integer.parseInt(arrStr[0]);
-                            int y = Integer.parseInt(arrStr[1]);
-                            System.out.println(displaySeedOptions());
-                            lblText.setText(text);
-                        }
-                    }
-                });
                 panelCenter.add(plantButtons[i][j]);
             }
         }
@@ -324,27 +311,16 @@ public class MyFarmGUI extends JFrame{
 
         toolButtons = new JButton[5];
         JLabel toolFrame = new JLabel();
-
+        String[] toolNames = {"Watercan", "Fertilizer", "Plow Tool", "Pickaxe", "Shovel"};
         for (int l = 0; l < 5; l++) {
-            String text = Integer.toString(l);
-            toolButtons[l] = new JButton(text);
+            toolButtons[l] = new JButton(toolNames[l]);
             toolButtons[l].setFont(new Font("Arial", Font.BOLD, 14));
             toolButtons[l].setBackground(Color.decode("#E6E5A3"));
             toolButtons[l].setForeground(Color.black);
-            toolButtons[l].addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource() instanceof JButton) {
-                        String text = ((JButton) e.getSource()).getText();
-                        String[] arrStr = text.split(",",2);
-                        int x = Integer.parseInt(arrStr[0]);
-                        int y = Integer.parseInt(arrStr[1]);
-                        JOptionPane.showMessageDialog(null, text);
-                        toolFrame.setText(text);
-                    }
-                }
-            });
+
             panelSouth.add(toolButtons[l]);
+
+
         }
         return panelSouth;
     }
@@ -368,6 +344,25 @@ public class MyFarmGUI extends JFrame{
         String expString = Double.toString(exp);
         this.expVal.setText(expString);
     }
+
+    //ACTION LISTENER
+    public void setActionListener(ActionListener listener) {
+        for (int i = 0; i < 5; i++) {
+            toolButtons[i].addActionListener(listener);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                plantButtons[i][j].addActionListener(listener);
+            }
+        }
+
+        btnPlant.addActionListener(listener);
+        btnHarvest.addActionListener(listener);
+        btnNextDay.addActionListener(listener);
+        btnUse.addActionListener(listener);
+    }
+
 
     //PANEL EAST NORTH
     public void setPlantCoordinate(String coordinate){
@@ -442,17 +437,25 @@ public class MyFarmGUI extends JFrame{
 
     //EAST SOUTH
 
-    public void setPlantButtonColor(Color color){
+    public void setPlantButtonColor(){
         btnPlant.setBackground(Color.decode("#EBE29F"));
     }
 
-    public void setHarvestButtonColor(Color color){
+    public void setHarvestButtonColor(){
         btnHarvest.setBackground(Color.decode("#EBE29F"));
     }
 
     //CENTER PANEL
     public void readyForHarvest(int row, int col){
         plantButtons[row][col].setBackground(Color.green);
+    }
+
+    public void plowedTile(int row, int col){
+        plantButtons[row][col].setBackground(Color.cyan);
+    }
+
+    public void revertOriginalTileColor(int row, int col){
+        plantButtons[row][col].setBackground(Color.decode("#E6E5A3"));
     }
 
     public void rockOccupied(int row, int col){
@@ -467,9 +470,11 @@ public class MyFarmGUI extends JFrame{
     }
 
     //SOUTH PANEL
-    public void changeToolButtonColor(int select, Color defaultColor, int currentTool, Color newColor){
-        toolButtons[currentTool].setBackground(defaultColor);
-        toolButtons[select].setBackground(newColor);
+    public void changeToolButtonColor(int select, int currentTool){
+        if (select != currentTool){
+            toolButtons[currentTool].setBackground(Color.decode("#E6E5A3"));
+            toolButtons[select].setBackground(Color.PINK);
+        }
     }
 
     public int displaySeedOptions(){
