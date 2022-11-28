@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9de592ff-0d49-44b9-b4c6-845574de910a" name="Changes" comment="Added updateView() in Controller">
-      <change afterPath="$PROJECT_DIR$/Game/Main.java" afterDir="false" />
+    <list default="true" id="9de592ff-0d49-44b9-b4c6-845574de910a" name="Changes" comment="Implemented display features and connections to Controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/View/DriverView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/DriverView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/Model/Controller/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/DriverView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/DriverView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/MyFarmGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/MyFarmGUI$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/MyFarmGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/Game/View/MyFarmGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669569944343</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented display features and connections to Controller">
+      <created>1669607312565</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669607312565</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,7 +133,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Merge and added GameStats.java" />
     <MESSAGE value="Added updateView() in Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added updateView() in Controller" />
+    <MESSAGE value="Implemented display features and connections to Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented display features and connections to Controller" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

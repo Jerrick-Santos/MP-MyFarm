@@ -47,14 +47,14 @@ public class Controller implements ActionListener {
                     mainGUI.rockOccupied(i,j);
                 }
                 else if (!player.getLand(i,j).isRock() && !player.getLand(i,j).isOccupied() &&
-                        player.getLand(i,j).isPlowed()){
+                        player.getLand(i,j).isPlowed()){ //if a tile i plowed
                     mainGUI.plowedTile(i,j);
                 }
                 else if (!player.getLand(i,j).isRock() && player.getLand(i,j).isOccupied() && player.getLand(i,j).isPlowed()
                 && player.getLand(i,j).isPlowed() && player.getLand(i,j).getPlantedSeed() != null && player.getLand(i,j).getPlantedSeed().isWithered()){ //if a plant has withered
                     mainGUI.plantWithered(i,j);
                 }
-                else if (player.harvestPlant(i,j)){ //if a plant is ready for harvest
+                else if (player.checkHarvestPlantEligiility(i,j)){ //if a plant is ready for harvest
                     mainGUI.readyForHarvest(i,j);
                 }
                 else if (!player.getLand(i,j).isRock() && player.getLand(i,j).isOccupied()){ //if occupied with a plant
@@ -65,11 +65,19 @@ public class Controller implements ActionListener {
                 }
             }
         }
+
+        if (player.updateLevel()){
+            mainGUI.setFarmerLevel(player.getLevel());
+            mainGUI.displayLevelUp(player.getLevel());
+            if (player.checkFarmerTypeUpgradeEligibility()){
+                mainGUI.displayFarmerUpgradeEligibility();
+            }
+        }
+
     }
 
     public void updateTileInfo(int row, int col){
-        if (!player.getLand(row,col).isRock() && player.getLand(row,col).isOccupied()
-        && player.getLand(row,col).getPlantedSeed() != null){
+        if (player.getLand(row,col).getPlantedSeed() != null){
             mainGUI.setCropM(player.getLand(row,col).getPlantedSeed().getDaysPassed());
             mainGUI.setHarvestD(player.getLand(row,col).getPlantedSeed().getHarvestDayRequired());
             //TODO: Maximum WR
@@ -122,12 +130,24 @@ public class Controller implements ActionListener {
         }
         else if (e.getActionCommand().equals("Next Day")){
             player.nextDay();
-            updateView();
             updateTileInfo(this.row, this.col);
+            updateView();
         }
         else if (e.getActionCommand().equals("Use Tool")){
             player.useEquippedTool(this.row,this.col);
             updateView();
+            updateTileInfo(this.row, this.col);
+        }
+        else if (e.getActionCommand().equals("Prestige Up")){
+            if (player.checkFarmerTypeUpgradeEligibility()){
+                int choice = mainGUI.displayFarmerTypeUpgradeOptions(player.getNextFarmerType().getFarmerTypeName(), player.getNextFarmerType().getFee());
+                player.updateFarmerType(choice);
+            }
+            else{
+                mainGUI.displayFarmerError();
+            }
+            updateView();
+            updateTileInfo(this.row, this.col);
         }
         else {
             for (int i = 0; i < 10; i++) {

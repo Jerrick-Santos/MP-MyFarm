@@ -1,11 +1,7 @@
 package Game.View;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
@@ -361,6 +357,7 @@ public class MyFarmGUI extends JFrame{
         btnHarvest.addActionListener(listener);
         btnNextDay.addActionListener(listener);
         btnUse.addActionListener(listener);
+        updateFT.addActionListener(listener);
     }
 
 
@@ -477,6 +474,8 @@ public class MyFarmGUI extends JFrame{
         }
     }
 
+    //JOPTION PANES
+
     public int displaySeedOptions(){
         int retVal = -1;
         //i solved my problem adding the following 2 lines of code...
@@ -496,6 +495,33 @@ public class MyFarmGUI extends JFrame{
         }
 
         return retVal;
+    }
+
+    public void displayFarmerUpgradeEligibility(){
+        JOptionPane.showMessageDialog(this, "You are now eligible to upgrade your farmer type!"
+        , "Farmer Update", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public void displayLevelUp(int level){
+        JOptionPane.showMessageDialog(this, "Level Up! You are now at Level " + level
+                , "Farmer Update", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public int displayFarmerTypeUpgradeOptions(String farmerTypeName, double fee){
+        String[] options = {"No", "Yes"};
+
+        int retVal = JOptionPane.showOptionDialog(this,
+                "Do you want to update to " + farmerTypeName + " for " + fee + " OJCs?",
+                "Farmer Upgrade",
+                JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                null, options, 1);
+
+        return retVal;
+    }
+
+    public void displayFarmerError(){
+        JOptionPane.showMessageDialog(this, "Warning! You cant upgrade. Check conditions"
+                , "Farmer Upgrade Error", JOptionPane.PLAIN_MESSAGE);
     }
 
 }

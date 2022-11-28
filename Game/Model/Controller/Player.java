@@ -285,6 +285,19 @@ public class Player {
         return retVal;
     }
 
+    public boolean checkHarvestPlantEligiility(int row, int col){
+        boolean retVal = false;
+        if (this.land[row][col].getPlantedSeed() != null && this.land[row][col].isPlowed()
+                && !this.land[row][col].getPlantedSeed().isWithered()
+                && this.land[row][col].getPlantedSeed().getHarvestDayRequired() == this.land[row][col].getPlantedSeed().getDaysPassed()){
+            retVal = true;
+        }
+        else {
+            System.out.println("Warning: Cannot harvest Seed. Check if seed exists or had withered");
+        }
+        return retVal;
+    }
+
 
     /**
      * Harvests a plant.
@@ -484,6 +497,16 @@ public class Player {
 
     public FarmerType getFarmerType() {
         return farmerTypeList.get(farmerTypeIndex);
+    }
+
+    public FarmerType getNextFarmerType() {
+
+        if (farmerTypeIndex < 3){
+            return farmerTypeList.get(farmerTypeIndex++);
+        }
+        else {
+            return farmerTypeList.get(farmerTypeIndex);
+        }
     }
 
     public GameStats getGameStats() {
