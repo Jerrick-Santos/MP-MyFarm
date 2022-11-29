@@ -14,7 +14,7 @@ public class GameStats {
      * the player's wallet balance and experience.
      */
     public GameStats() {
-        this.balance = 100;
+        this.balance = 100000;
         this.exp = 0;
     }
 

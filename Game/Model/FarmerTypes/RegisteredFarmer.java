@@ -2,6 +2,6 @@ package Game.Model.FarmerTypes;
 
 public class RegisteredFarmer extends FarmerType{
     public RegisteredFarmer() {
-        super("Registered Farmer", 5, 1, 1, 0, 0, 200);
+        super("Registered", 5, 1, 1, 0, 0, 200);
     }
 }

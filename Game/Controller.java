@@ -141,6 +141,7 @@ public class Controller implements ActionListener {
         else if (e.getActionCommand().equals("Prestige Up")){
             if (player.checkFarmerTypeUpgradeEligibility()){
                 int choice = mainGUI.displayFarmerTypeUpgradeOptions(player.getNextFarmerType().getFarmerTypeName(), player.getNextFarmerType().getFee());
+                System.out.println(choice);
                 player.updateFarmerType(choice);
             }
             else{
