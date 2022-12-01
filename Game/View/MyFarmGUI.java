@@ -6,8 +6,14 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 public class MyFarmGUI extends JFrame{
+
+    private Icon cancelIcon;
+    private Icon grassIcon;
+    private Icon checkIcon;
+    private Icon seedIcon;
+    private Icon rockIcon, skull, plowedIcon, plantIcon;
     // North Panel
-    private JLabel farmerTypeStat, levelVal, objcoinsVal, expVal;
+    private JLabel farmerTypeStat, levelVal, objcoinsVal, expVal, daysPassed;
     private JButton updateFT;
     // East Panel
     private JLabel lblText;
@@ -24,7 +30,7 @@ public class MyFarmGUI extends JFrame{
     public MyFarmGUI() {
         super("MP-MyFarm");
         setLayout(new BorderLayout());
-        setSize(800,500);
+        setSize(1000,500);
         setLocation(100,100);
         setAlwaysOnTop(true);
 
@@ -37,6 +43,16 @@ public class MyFarmGUI extends JFrame{
         setVisible(true);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        cancelIcon= new ImageIcon(Objects.requireNonNull(getClass().getResource("icons8-cancel-32.png")));
+        checkIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons8-done-32.png")));
+        grassIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("grass.png")));
+        rockIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("rock1.png")));
+        seedIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("seeded1.png")));
+        skull = new ImageIcon(Objects.requireNonNull(getClass().getResource("skull.png")));
+        plowedIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("plowed.png")));
+        plantIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("plant.png")));
+
     }
 
     public void mainContainer(RoundedPanel NORTHPanel, JPanel EASTPanel, RoundedPanel CENTERPanel,
@@ -57,7 +73,7 @@ public class MyFarmGUI extends JFrame{
         RoundedPanel panelNorth = new RoundedPanel();
                      panelNorth.setLayout(new FlowLayout(5));
                      panelNorth.setBackground(Color.decode("#E6E5A3"));
-                     panelNorth.setBorder(BorderFactory.createEmptyBorder(3,3,0,3));
+                     panelNorth.setBorder(BorderFactory.createEmptyBorder(3,3,3,3));
 
         JLabel bracket1 = new JLabel(" [");
                bracket1.setFont(new Font("Arial", Font.BOLD, 14));
@@ -81,9 +97,15 @@ public class MyFarmGUI extends JFrame{
                expLbl.setFont(new Font("Arial", Font.BOLD, 14));
         expVal = new JLabel("5");
         expVal.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel bracket3 = new JLabel("]");
+        JLabel bracket3 = new JLabel("]      ");
                bracket3.setFont(new Font("Arial", Font.BOLD, 14));
-        JLabel spacee = new JLabel("                                                       ");
+        JLabel bracket4 = new JLabel("Days Passed[");
+               bracket4.setFont(new Font("Arial", Font.BOLD, 14));
+        daysPassed = new JLabel("0");
+        daysPassed.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel bracket5 = new JLabel("]");
+               bracket5.setFont(new Font("Arial", Font.BOLD, 14));
+        JLabel spacee = new JLabel("                        ");
         updateFT = new JButton("Prestige Up");
         updateFT.setBackground(Color.GREEN);
         updateFT.setForeground(Color.BLACK);
@@ -102,6 +124,9 @@ public class MyFarmGUI extends JFrame{
         panelNorth.add(expLbl);
         panelNorth.add(expVal);
         panelNorth.add(bracket3);
+        panelNorth.add(bracket4);
+        panelNorth.add(daysPassed);
+        panelNorth.add(bracket5);
         panelNorth.add(spacee);
         panelNorth.add(updateFT);
 
@@ -144,37 +169,37 @@ public class MyFarmGUI extends JFrame{
                      status.setBorder(BorderFactory.createEmptyBorder(3, 3, 3, 3));
                      status.setBackground(Color.decode("#E6E5A3"));
 
-        JLabel cM = new JLabel("    Crop Maturity (in days):     ");
+        JLabel cM = new JLabel("                          Crop Maturity (in days)");
                cM.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(cM);
         cropMaturity = new JLabel("........................................" + cropM);
         cropMaturity.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(cropMaturity);
-        JLabel hD = new JLabel("                     Harvest Day: ");
+        JLabel hD = new JLabel("                                            Harvest Day");
                hD.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(hD);
         harvestDay = new JLabel("........................................" + harvestD);
         harvestDay.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(harvestDay);
-        JLabel mWR = new JLabel("  Minimum Water Req: ");
+        JLabel mWR = new JLabel("                              Minimum Water Req");
                mWR.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(mWR);
         minimumWaterReq = new JLabel("........................................" + minWR);
         minimumWaterReq.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(minimumWaterReq);
-        JLabel tCW = new JLabel("       Times Crop Watered: ");
+        JLabel tCW = new JLabel("                             Times Crop Watered");
                tCW.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(tCW);
         timesCropWatered = new JLabel("........................................" + timesCW);
         timesCropWatered.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(timesCropWatered);
-        JLabel mFR = new JLabel("  Minimum Fertilizer Req: ");
+        JLabel mFR = new JLabel("                         Minimum Fertilizer Req");
                mFR.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(mFR);
         minimumFertilizerReq = new JLabel("........................................" + minFR);
         minimumFertilizerReq.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(minimumFertilizerReq);
-        JLabel tCF = new JLabel("     Times Crop Fertilized: ");
+        JLabel tCF = new JLabel("                           Times Crop Fertilized");
                tCF.setFont(new Font("Arial", Font.BOLD, 14));
         status.add(tCF);
         timesCropFertilized = new JLabel("........................................" + timesCF);
@@ -285,7 +310,7 @@ public class MyFarmGUI extends JFrame{
 
         plantButtons = new JButton[10][5];
         JLabel textFrame = new JLabel("");
-
+        Icon RockIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("grass.png")));
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {
                 String text = Integer.toString(i) + "," + Integer.toString(j);
@@ -294,6 +319,8 @@ public class MyFarmGUI extends JFrame{
                 plantButtons[i][j].setBackground(Color.decode("#E6E5A3"));
                 plantButtons[i][j].setForeground(Color.black);
                 panelCenter.add(plantButtons[i][j]);
+                plantButtons[i][j].setIcon(RockIcon);
+                plantButtons[i][j].setForeground(plantButtons[i][j].getBackground());
             }
         }
         return panelCenter;
@@ -445,25 +472,38 @@ public class MyFarmGUI extends JFrame{
     //CENTER PANEL
     public void readyForHarvest(int row, int col){
         plantButtons[row][col].setBackground(Color.green);
+        plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
+        plantButtons[row][col].setIcon(this.plantIcon);
     }
 
     public void plowedTile(int row, int col){
-        plantButtons[row][col].setBackground(Color.cyan);
+        plantButtons[row][col].setBackground(Color.PINK);
+        plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
+        plantButtons[row][col].setIcon(this.plowedIcon);
     }
 
     public void revertOriginalTileColor(int row, int col){
         plantButtons[row][col].setBackground(Color.decode("#E6E5A3"));
+        plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
+        plantButtons[row][col].setIcon(this.grassIcon);
     }
 
     public void rockOccupied(int row, int col){
+        Icon rockyIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("rock1.png")));
         plantButtons[row][col].setBackground(Color.orange);
+        plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
+        plantButtons[row][col].setIcon(this.rockIcon);
     }
     public void tileIsOccupied(int row, int col){
         plantButtons[row][col].setBackground(Color.yellow);
+        plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
+        plantButtons[row][col].setIcon(this.seedIcon);
     }
 
     public void plantWithered(int row, int col){
         plantButtons[row][col].setBackground(Color.red);
+        plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
+        plantButtons[row][col].setIcon(this.skull);
     }
 
     //SOUTH PANEL
