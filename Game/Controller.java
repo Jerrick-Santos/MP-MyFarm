@@ -40,6 +40,7 @@ public class Controller implements ActionListener {
         mainGUI.setFarmerLevel(player.getLevel());
         mainGUI.setFarmerBalance(player.getGameStats().balance);
         mainGUI.setFarmerExpVal(player.getGameStats().exp);
+        mainGUI.setDaysPassed(player.getPassedDays());
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {

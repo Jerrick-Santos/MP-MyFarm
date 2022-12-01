@@ -368,6 +368,11 @@ public class MyFarmGUI extends JFrame{
         this.expVal.setText(expString);
     }
 
+    public void setDaysPassed(int days){
+        String daysPassedString = Integer.toString(days);
+        this.daysPassed.setText(daysPassedString);
+    }
+
     //ACTION LISTENER
     public void setActionListener(ActionListener listener) {
         for (int i = 0; i < 5; i++) {
