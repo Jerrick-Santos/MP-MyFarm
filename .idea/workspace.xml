@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9de592ff-0d49-44b9-b4c6-845574de910a" name="Changes" comment="Added Icons and Resized window width">
+    <list default="true" id="9de592ff-0d49-44b9-b4c6-845574de910a" name="Changes" comment="Added DaysPassed GUI Implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/GameStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Controller/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Controller/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/MyFarmGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669893695535</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added DaysPassed GUI Implementation">
+      <created>1669893972836</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669893972836</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,7 +164,8 @@
     <MESSAGE value="Implemented Update Farmer Type features on MVC" />
     <MESSAGE value="Edited FarmerType Features" />
     <MESSAGE value="Added Icons and Resized window width" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Icons and Resized window width" />
+    <MESSAGE value="Added DaysPassed GUI Implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DaysPassed GUI Implementation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

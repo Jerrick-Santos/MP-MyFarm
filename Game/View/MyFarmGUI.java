@@ -448,20 +448,46 @@ public class MyFarmGUI extends JFrame{
     }
 
     //EAST CENTER SOUTH
-    public void setRockIcon(Icon icon){
-        forRock.setIcon(icon);
+    public void setRockIcon(boolean val){
+        Icon cancel = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons8-cancel-32.png")));
+        Icon check =  new ImageIcon(Objects.requireNonNull(getClass().getResource("icons8-done-32.png")));
+        if (val){
+            forRock.setIcon(check);
+        }
+        else {
+            forRock.setIcon(cancel);
+        }
+
     }
 
-    public void setPlowIcon(Icon icon){
-        forPlow.setIcon(icon);
+    public void setPlowIcon(boolean val){
+        if (val){
+            forRock.setIcon(this.checkIcon);
+        }
+        else {
+            forRock.setIcon(this.cancelIcon);
+        }
+
     }
 
-    public void setSeedIcon(Icon icon){
-        forSeed.setIcon(icon);
+    public void setSeedIcon(boolean val){
+        if (val){
+            forRock.setIcon(this.checkIcon);
+        }
+        else {
+            forRock.setIcon(this.cancelIcon);
+        }
+
     }
 
-    public void setWitherIcon(Icon icon){
-        forWither.setIcon(icon);
+    public void setWitherIcon(boolean val){
+        if (val){
+            forRock.setIcon(this.checkIcon);
+        }
+        else {
+            forRock.setIcon(this.cancelIcon);
+        }
+
     }
 
     //EAST SOUTH
@@ -564,9 +590,40 @@ public class MyFarmGUI extends JFrame{
         return retVal;
     }
 
+    public int displayEndGameOption(){
+        String[] options = {"No", "Yes"};
+
+        int retVal = JOptionPane.showOptionDialog(this,
+                "Game Over: Do you want to start over?",
+                "Game Over",
+                JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                null, options, 1);
+
+        return retVal;
+    }
+
     public void displayFarmerError(){
         JOptionPane.showMessageDialog(this, "Warning! You cant upgrade. Check conditions"
                 , "Farmer Upgrade Error", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public void displayPlantError(){
+        JOptionPane.showMessageDialog(this, "Warning: cannot be planted! Check OBJCs wallet if sufficient or if tile is occupied/withered (or if Fruit Tree is attempted check surrounding tiles."
+                , "Plant Error", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public void displayHarvestError(){
+        JOptionPane.showMessageDialog(this, "Warning: Cannot harvest Seed. Check if seed exists or had wither"
+                , "Harvest Error", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public void displayToolError(){
+        JOptionPane.showMessageDialog(this, "Cannot use tool: Check tile conditions and cost usage of tool"
+                , "Invalid Tool Usage", JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public void terminateGUI(){
+        System.exit(0);
     }
 
 }

@@ -84,7 +84,7 @@ public class Player {
             }
         }
         this.gameStats = new GameStats();
-        this.selectedTool = -1;
+        this.selectedTool = 0;
         File rockMap = new File("Game\\Model\\Controller\\RockMapping.txt");
 
         mapRocksInitialization(rockMap);

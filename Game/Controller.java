@@ -35,6 +35,23 @@ public class Controller implements ActionListener {
         mainGUI.setActionListener(this);
     }
 
+    public void farmEnder(){
+        if (player.endGame()){
+            int select = mainGUI.displayEndGameOption();
+
+            if (select == 1){
+                player.restartGame();
+                updateView();
+                updateTileInfo(0,0);
+            }
+            else if (select == 0){
+                player.endGameNow();
+                mainGUI.terminateGUI();
+                System.exit(0);
+            }
+        }
+    }
+
     public void updateView(){
         mainGUI.setFarmerTypeName(player.getFarmerType().getFarmerTypeName());
         mainGUI.setFarmerLevel(player.getLevel());
@@ -75,6 +92,7 @@ public class Controller implements ActionListener {
             }
         }
 
+
     }
 
     public void updateTileInfo(int row, int col){
@@ -89,10 +107,19 @@ public class Controller implements ActionListener {
             mainGUI.setTimesCF(player.getLand(row,col).getPlantedSeed().getFertilizer().getTimesCropFertilized());
             mainGUI.revertTileInfo();
             mainGUI.setPlantLabel(player.getLand(this.row, this.col).getPlantedSeed().getName());
+            mainGUI.setRockIcon(player.getLand(row,col).isRock());
+            mainGUI.setPlowIcon(player.getLand(row,col).isPlowed());
+            mainGUI.setSeedIcon(true);
+            mainGUI.setWitherIcon(player.getLand(row,col).getPlantedSeed().isWithered());
 
         } else if (player.getLand(row,col).getPlantedSeed() == null){
             mainGUI.removeAllTileInfo();
             mainGUI.setPlantLabel("None");
+            mainGUI.setRockIcon(player.getLand(row,col).isRock());
+            mainGUI.setPlowIcon(player.getLand(row,col).isPlowed());
+            mainGUI.setSeedIcon(false);
+            mainGUI.setWitherIcon(false);
+
         }
     }
 
@@ -120,12 +147,20 @@ public class Controller implements ActionListener {
         }
         else if (e.getActionCommand().equals("Plant")){
             int select = mainGUI.displaySeedOptions();
-            player.plant(select, this.row, this.col);
+
+            if (!player.plant(select, this.row, this.col)){
+                mainGUI.displayPlantError();
+            }
+
             updateView();
             updateTileInfo(this.row, this.col);
         }
         else if (e.getActionCommand().equals("Harvest")){
-            player.harvestPlant(this.row, this.col);
+
+            if (!player.harvestPlant(this.row, this.col)){
+                mainGUI.displayHarvestError();
+            }
+
             updateView();
             updateTileInfo(this.row, this.col);
         }
@@ -135,7 +170,11 @@ public class Controller implements ActionListener {
             updateView();
         }
         else if (e.getActionCommand().equals("Use Tool")){
-            player.useEquippedTool(this.row,this.col);
+
+            if (!player.useEquippedTool(this.row,this.col)){
+                mainGUI.displayToolError();
+            }
+
             updateView();
             updateTileInfo(this.row, this.col);
         }
@@ -168,6 +207,8 @@ public class Controller implements ActionListener {
                 }
             }
         }
+
+        farmEnder();
 
     }
 
