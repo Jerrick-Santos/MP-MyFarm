@@ -56,8 +56,8 @@ public class Controller implements ActionListener {
     public void updateView(){
         mainGUI.setFarmerTypeName(player.getFarmerType().getFarmerTypeName());
         mainGUI.setFarmerLevel(player.getLevel());
-        mainGUI.setFarmerBalance(player.getGameStats().balance);
-        mainGUI.setFarmerExpVal(player.getGameStats().exp);
+        mainGUI.setFarmerBalance(Math.round(player.getGameStats().balance));
+        mainGUI.setFarmerExpVal(Math.round(player.getGameStats().exp));
         mainGUI.setDaysPassed(player.getPassedDays());
 
         for (int i = 0; i < 10; i++) {
