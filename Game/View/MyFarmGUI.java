@@ -452,12 +452,11 @@ public class MyFarmGUI extends JFrame{
         Icon cancel = new ImageIcon(Objects.requireNonNull(getClass().getResource("icons8-cancel-32.png")));
         Icon check =  new ImageIcon(Objects.requireNonNull(getClass().getResource("icons8-done-32.png")));
         if (val){
-            forRock.setIcon(check);
+            forRock = new JLabel(check);
         }
         else {
-            forRock.setIcon(cancel);
+            forRock = new JLabel(cancel);
         }
-
     }
 
     public void setPlowIcon(boolean val){
@@ -508,7 +507,7 @@ public class MyFarmGUI extends JFrame{
     }
 
     public void plowedTile(int row, int col){
-        plantButtons[row][col].setBackground(Color.PINK);
+        plantButtons[row][col].setBackground(Color.cyan);
         plantButtons[row][col].setForeground(plantButtons[row][col].getBackground());
         plantButtons[row][col].setIcon(this.plowedIcon);
     }
@@ -542,6 +541,9 @@ public class MyFarmGUI extends JFrame{
         if (select != currentTool){
             toolButtons[currentTool].setBackground(Color.decode("#E6E5A3"));
             toolButtons[select].setBackground(Color.PINK);
+        }
+        else {
+            toolButtons[currentTool].setBackground(Color.PINK);
         }
     }
 

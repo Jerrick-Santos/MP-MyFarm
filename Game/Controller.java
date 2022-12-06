@@ -31,8 +31,9 @@ public class Controller implements ActionListener {
         updateView();
         row = 0;
         col = 0;
-        updateTileInfo(this.row, this.col);
+        updateTileInfo(0, 0);
         mainGUI.setActionListener(this);
+        mainGUI.changeToolButtonColor(0,player.getSelectedTool());
     }
 
     public void farmEnder(){
