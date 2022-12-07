@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9de592ff-0d49-44b9-b4c6-845574de910a" name="Changes" comment="Debugged color switching selection on changeToolButtonColor() on MyFarmGUI.java">
+    <list default="true" id="9de592ff-0d49-44b9-b4c6-845574de910a" name="Changes" comment="Added round off/up on balance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MP-MyFarm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670340598281</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added round off/up on balance">
+      <created>1670341534373</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670341534373</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,7 +185,8 @@
     <MESSAGE value="Added DaysPassed GUI Implementation" />
     <MESSAGE value="Added Error Messages and EndGame features" />
     <MESSAGE value="Debugged color switching selection on changeToolButtonColor() on MyFarmGUI.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugged color switching selection on changeToolButtonColor() on MyFarmGUI.java" />
+    <MESSAGE value="Added round off/up on balance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added round off/up on balance" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MP_MyFarm$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1667410221133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
